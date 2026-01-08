@@ -1,0 +1,151 @@
+---
+title: "Що нового"
+description: "CHECKLISTS API "
+---
+
+### 1.10
+
+- [Відредаговано JSON схему відповіді сервісу CheckLists відповідно до нової версії API.](https://finap.com.ua/apiinfo/schema/v1/ResponseSchema.json)
+- Розширено структуру реєстру [<u>«Зміни даних юридичних осіб»:</u>](https://check.finap.com.ua/apiinfo/#edrChanges) додано ідентифікатор зміни (id), числовий код типу зміни (changetype), індикатор реальної зміни назви(ПІБ) керівника,кбв,засновника (ishumanchanges).
+- Додано новий блок по реєстру [<u>«Санкції»</u>](https://check.finap.com.ua/apiinfo/#psanctions)(psanctions). Альтернатива блокам sanctions і sanction_lost.
+- Реєстр [<u>«Окупанти»</u>](https://check.finap.com.ua/apiinfo/#okupant) розширено додатковою інформацією: фото (foto), індикатор «хорошого русского» (is_good), індикатор полононого (is_polon), індикатор ідентифікованості (is_identified), індикатор підсудності (is_accused), посилання на джерело (link), адреса (address)
+- В реєєстр [<u>«Зв'язок з юридичною особою»</u>](https://check.finap.com.ua/apiinfo/#edr_uk) добавлено блок Зв'язок з юридичною особою Великої Британії. Потребує оформолення окремого доступу. Використовує 20 біт.
+- В реєстрі [<u>«Особи в розшуку»</u>](https://check.finap.com.ua/apiinfo/#wanted) добавлено параметр actual. Він вказує чи є даних запис актуальним чи вже вилученим.
+- В реєстрі [<u>«Політично значущі особи»</u>](https://check.finap.com.ua/apiinfo/#peps) додано параметр type – тип особи (0-фізична, 1 - юридична)
+
+### 1.9
+
+- Відредаговано JSON схему відповіді [<u>(https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json)</u>](https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json) сервісу CheckLists відповідно до нової версії API.
+- Добавлено реєстр [<u>«Особи в розшуку»</u>](https://check.finap.com.ua/apiinfo/#wanted), в якому є дані по особах що об’явлені в розшук МВС та СБУ.
+- Добавлено реєстр [<u>Корупційні правопорушення.</u>](https://check.finap.com.ua/apiinfo/#wanted)
+- Добавлено блок [<u>sanction_lost</u>](https://check.finap.com.ua/apiinfo/#sanction_lost), в якому знаходяться санкції що були вилуечні із санкційних списків. В блоці sanction залишаються тільки автивні санкції. Для отримання даних по вилучених санкціях не потрібно додаткових доступів і окремих бітів listdata. Достатньо мати доступ до реєстру «Санкції».
+- В блок Зв'язок з юридичною особою добавлено параметр level.
+- Реєстр «Санкції» розширено санкційними списками наступних краї: Австралія, Нової Зеландія, Японія, Швейцарія, Бельгія, Ізраїль, Казахстан, Киргизія,Польша,Латвія, ОАЕ, ПАР, Болгарія, Аргентина, Катар, Індія, Нідерланди, Азейберджан.
+- Біт 7 вхідного параметру listdata тепер віповідає за перелік інших іноземних списків (на даний момент Франція, Австралія, Нова Зеландія, Японія, Швейцарія, Бельгії, Ізраїля, Казахстан, Киргизії Польша,Латвія, ОАЕ, ПАР, Болгарія, Аргентина, Катар, Індія, Нідерланди, Азейберджан).
+- У всі блоки реєстру «Реєстр юридичних осіб та ФОП» добавлено параметр indicators та indicators_str. В них у вигляді числа (indicators) чи бітової маски (indicators_str) будуть міститися всі індикатори, які зараз представлені окремим полем (див. таблиця 5).
+- У блок edrfullinfo реєстру «Реєстр юридичних осіб та ФОП» добавлено параметр date_last_changed – дата крайньої зміни інформації по ЮО чи ФОП.
+- Блоки Country в реєстрах розширено додатковими параметрами (sectoral, dangerous, eresident).
+- Блок edrfullinfo розширено інформацією про бенефіціарів, структуру власності, керівника, основного КВЕДа, розширено блок учасників (засновників), а також інтегровано індикатори.
+- В реєстр «Судові справи» деталізовано параметри datails та persons блоком documents та personsList відповідно.
+- В реєстр «Політично значущі особи» в блоки relatedPeps та relatedPersons добавлено дата народження осіб.
+
+### **1.8**
+
+- Відредаговано JSON схему відповіді [<u>(https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json)</u>](https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json) сервісу CheckLists відповідно до нової версії API.
+- Додано новий реєстр [<u>«Нотаріуси»</u>](https://check.finap.com.ua/apiinfo/#notarius)
+- Додано новий реєстр [<u>«Банкрути»</u>](https://check.finap.com.ua/apiinfo/#bankrupt)
+- Реєстр «Санкції» розширено санкційними списками [<u>Франції</u>](https://check.finap.com.ua/apiinfo/#france).
+- Реєстр «Боржники» включає пошук інформації по податковій заборгованості (taxdebt), та заборгованості з Єдиного реєстру заборгованості ([<u>debtor</u>](https://check.finap.com.ua/apiinfo/#debtor))
+
+### **1.7**
+
+- Відредаговано JSON схему відповіді [<u>(https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json)</u>](https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json) сервісу CheckLists відповідно до нової версії API.
+- Добавлено реєстр [<u>«Податкові нерезиденти»</u>](https://check.finap.com.ua/apiinfo/#nerezedent) (nerezedent).
+- 19.11.2022 набрали чинності зміни до Закону України 361-IX (https://zakon.rada.gov.ua/laws/show/2736-20#Text). Відмінено пожиттєвий статус національного публічного діяча. Тепер особи, що не виконують в Україні визначні публічні функції більше 3-х років втратили статус національного публічного діяча. У зв’язку з цим в реєстр «Політично значущі особи» додано наступні параметри:
+  - [<u>active</u>](https://check.finap.com.ua/apiinfo/#active) – індиктор активності статусу особи
+  - [<u>dateendpep</u>](https://check.finap.com.ua/apiinfo/#dateendpep) – дата припинення у особи статусу «Публічна»
+  - [<u>pependcomment</u>](https://check.finap.com.ua/apiinfo/#pependcomment) – коментар щодо припинення у особи статусу «Публічна»
+  - У блоці relatedPersons
+    - active – індикатор активності статусу особи
+    - archivelink – індикатор архівності зв’язку
+  - У блоці relatedPeps
+    - active – індикатор активності статусу особи
+    - archivelink – індикатор архівності зв’язку
+- В реєстрі «Реєстр юридичних осіб та ФОП» (edrinfo) додано наступні параметри:
+  - [<u>isnoprifit </u>](https://check.finap.com.ua/apiinfo/#isnoprifit)- ознака неприбутковості
+  - [<u>isriskbonds</u>](https://check.finap.com.ua/apiinfo/#isriskbonds) – ознака ризику пов’язаного з випуском цінних паперів
+
+### **1.6**
+
+- Відредаговано JSON схему відповіді (https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json) сервісу CheckLists відповідно до нової версії API.
+- Додано можливість здійснювати пошук за алгоритмом з корекцією помилок. Для цього вхідний параметр search повинен бути рівним 2 (за замовчуванням пошук відбувається за алгоритмом повнотекстного пошуку search=1).
+- В більшості реєстрів додано вихідний параметр percent і level.
+  - [<u>percent</u>](https://check.finap.com.ua/apiinfo/#percent) вказує на відсоток збігу по назві (ПІБ) згідно обраного алгоритму пошуку, або на повне співпадіння по коду ЄДРПОУ (в даному випадку percent=100).
+  - [<u>level</u>](https://check.finap.com.ua/apiinfo/#level) вказує на рівень збігу між вхідними і вихідними даними. Може приймати значення «Високий» або «Низький». Високий рівень збігу для юридичної особи – це збіг по ЄДРПОУ, для фізичної особи – повний збіг назві (ПІБ) або альтенативній назві (ПІБ) і даті народження (у раєстрах де така дата присутня). Всі решта збігів прийнято вважати збігами низького рівня.
+- В реєстри «Політично значущі особи», «Реєстр юридичних осіб та ФОП» (edrinfo і edrfullinfo) додатково до параметрів де вказана країна (за виключенням УКРАЇНИ) добавлено параметри з блоками даних про ризиковість даної країни ([<u>country</u>](https://check.finap.com.ua/apiinfo/#country), [<u>country_of_origin_risk</u>](https://check.finap.com.ua/apiinfo/#country_of_origin_risk), [<u>country_of_register_risk</u>](https://check.finap.com.ua/apiinfo/#country_of_register_risk))
+- В реєстрі «Політично значущі особи» в блоці RelatedPep добавлено параметр [<u>descriptiontyperpep</u>](https://check.finap.com.ua/apiinfo/#descriptiontyperpep) , що вказує на цифрове значення категорії публічності пов’язаної публічної особи.
+- В реєстрі «Судові справи» добавлено параметр [<u>edrpou</u>](https://check.finap.com.ua/apiinfo/#edrpou_sud) – ЄДРПОУ юридичної особи учасника судової справи де це можна встановити.
+- В реєстрі «Податкові боржники» добавлено параметр [<u>id</u>](https://check.finap.com.ua/apiinfo/#tax_id) -унікальний ідентифікатор боржника в реєстрі.
+- В реєстрі «Реєстр юридичних осіб та ФОП» (edrinfo) добавлено наступні параметри:
+  - [<u>isbranch</u>](https://check.finap.com.ua/apiinfo/#isbranch) – вказує що даний запис стосується відокремленого підрозділу
+  - [<u>n_mfounder</u>](https://check.finap.com.ua/apiinfo/#n_mfounder) – к-сть організацій, де дане підприємство є бенефіціаром
+  - [<u>mfounder_edrpou</u>](https://check.finap.com.ua/apiinfo/#mfounder_edrpou) – перелік ЄДРПОУ організацій, де дане підприємство є бенефіціаром
+  - В блоці founder добавлено наступні параметри:
+    - [<u>name_adr_mb</u>](https://check.finap.com.ua/apiinfo/#name_adr_mb) – ПІБ бенефіціарів які пов’язані з даним бенефіціаром за спільною адресою
+    - [<u>country_of_register</u>](https://check.finap.com.ua/apiinfo/#country_of_register) – країна реєстрації бенефіціара/власника.
+
+### **1.5**
+
+- Відредаговано JSON схему відповіді (https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json) сервісу CheckLists відповідно до нової версії API.
+- Добавлено реєстр [<u>“Окупанти”</u>](https://check.finap.com.ua/apiinfo/#okupant) (okupant).
+- Добавлено реєстр [<u>“Зрадники”</u>](https://check.finap.com.ua/apiinfo/#zrada) (zrada)
+
+### **1.4**
+
+- Відредаговано JSON схему відповіді (https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json) с ервісу CheckLists відповідно до нової версії API.
+- До реєсту “Політично значущі особи” (peps) було добавлено ряд параметрів:
+  - [<u>aka</u>](https://check.finap.com.ua/apiinfo/#peps_aka) - альтернативні імена.
+  - [<u>yearb</u>](https://check.finap.com.ua/apiinfo/#peps_yearb) – рік народження в разі відсутності дати народження.
+  - [<u>sources</u>](https://check.finap.com.ua/apiinfo/#peps_sources) – блок посилання на джерело інформації щодо особи:
+    - [<u>site</u>](https://check.finap.com.ua/apiinfo/#peps_site) – посилання на джерело
+    - [<u>pdf</u>](https://check.finap.com.ua/apiinfo/#peps_pdf) – посилання на pdf файл з підтвердженням інформації з джерела
+    - [<u>brief</u>](https://check.finap.com.ua/apiinfo/#peps_brief) – додаткова інформація по джерелу
+  - В блок пов'язані особи (relatedPersons) наступні параметри:
+  - [<u>relateaka</u>](https://check.finap.com.ua/apiinfo/#peps_relateaka) - перелік альтернативних імен особи
+  - [<u>relatelink</u>](https://check.finap.com.ua/apiinfo/#peps_relatelink) - цифровий код зв'язку згідно довідника НБУ K019
+  - В блок причетність до пепа (relatedPeps) наступні параметри:
+  - [<u>akarpep</u>](https://check.finap.com.ua/apiinfo/#peps_akarpep) - перелік альтернативних імен особи
+  - [<u>linkrpep</u>](https://check.finap.com.ua/apiinfo/#peps_linkrpep) - цифровий код зв'язку згідно довідника НБУ K019
+
+### **1.3**
+
+- Відредаговано JSON схему відповіді (https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json) сервісу CheckLists відповідно до нової версії API.
+- До реєсту “Реєстр юридичних осіб та ФОП” (edrinfo) було добавлено ряд параметрів:
+  - [<u>isbilorussian</u>](https://check.finap.com.ua/apiinfo/#isbilorussian_edrinfo) - громадянин Білорусії присутній серед власників (в тому числі бенефіціарів). Даний параметр може приймати значення true або взагалі бути відсутнім у разі не виявлення таких осіб.
+  - [<u>isrussian</u>](https://check.finap.com.ua/apiinfo/#isrussian_edrinfo) - громадянин Росії присутній серед власників (в тому числі бенефіціарів) Даний параметр може приймати значення true або взагалі бути відсутнім у разі не виявлення таких осіб.
+  - В блоці founders добавлено наступні параметри:
+    - [<u>country_of_origin</u>](https://check.finap.com.ua/apiinfo/#country_of_origin) – країна громадянства бенефіціара
+    - [<u>address_f</u>](https://check.finap.com.ua/apiinfo/#address_f) – адреса бенефіціара
+- До реєсту “Зв'язок з юридичною особою” (edr) було добавлено ряд параметрів:
+  - [<u>isbilorussian</u>](https://check.finap.com.ua/apiinfo/#isbilorussian_edr) - громадянин Білорусії присутній серед власників (в тому числі бенефіціарів). Даний параметр може приймати значення true або взагалі бути відсутнім у разі не виявлення таких осіб.
+  - [<u>isrussian</u>](https://check.finap.com.ua/apiinfo/#isrussian_edr) - громадянин Росії присутній серед власників (в тому числі бенефіціарів) Даний параметр може приймати значення true або взагалі бути відсутнім у разі не виявлення таких осіб.
+  - [<u>ispep</u>](https://check.finap.com.ua/apiinfo/#ispep) - збіг по реєстру "Політично значущі особи" присутній серед власників, бенефіціарів і керівників. Даний параметр може приймати значення true або взагалі бути відсутнім у разі не виявлення таких осіб.
+  - [<u>isactualpep</u>](https://check.finap.com.ua/apiinfo/#isactualpep) - підтвердження збігу по реєстру "Політично значущі особи" серед власників, бенефіціарів і керівників. Даний параметр може приймати значення true або взагалі бути відсутнім у разі не виявлення підтвердження.
+  - [<u>issan</u>](https://check.finap.com.ua/apiinfo/#issan) - збіг по реєстру "Санкції" присутній серед власників, бенефіціарів і керівників. Даний параметр може приймати значення true або взагалі бути відсутнім у разі не виявлення таких осіб.
+
+### **1.2**
+
+- Додано новий пошуковий реєстр [<u>“Реєстр юридичних осіб та ФОП” (edrfullinfo)</u>](https://check.finap.com.ua/apiinfo/#edrfullinfo), який в тому числі дозволяє здійснювати пошук по відокремлених підрозділах юридичної особи.
+- Описано логіку розрахунку параметру level для реєстру “Політично значущі особи”, “Санкції”. Вхідні параметри
+- Створено JSON схему запиту ([<u>https://check.finap.com.ua/apiinfo/schema/v1/RequestSchema.json</u>](https://check.finap.com.ua/apiinfo/schema/v1/RequestSchema.json)) і відповіді ([<u>https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json</u>](https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json)) сервісу CheckLists.
+- До реєсту “Політично значущі особи” (pep) в блоки relatedPeps і relatedPersons було добавлено ряд параметрів:
+  - [<u>idpep</u>](https://check.finap.com.ua/apiinfo/#idpep) (в блоці relatedPeps) та relateid (в блоці relatedPersons) – унікальний ідентифікатор особи в реєстрі;
+  - [<u>relateorg</u>](https://check.finap.com.ua/apiinfo/#relateorg) - перелік ЄДРПОУ організацій (через які будується пов'язаність по КБВ при не прямому звязку з фізичною особою).
+- До реєсту “Державні реєстри — інформація про ЮО” (edrinfo)
+  - [<u>m_pep_ids</u>](https://check.finap.com.ua/apiinfo/#m_pep_ids) – Перелік ідентифікаторів записів в реєстрі “Політично значущі особи”, що стосуються збігів по керівнику
+  - [<u>m_san_ids</u>](https://check.finap.com.ua/apiinfo/#m_san_ids) - Перелік ідентифікаторів записів в реєстрі “Санкції”, що стосуються збігів по керівнику
+  - [<u>address_mreg</u>](https://check.finap.com.ua/apiinfo/#address_mreg) – ймовірна адреса масової реєстрації (к-сть зареєстрованих компаній на дану адресу)
+  - блок founders було добавлено ряд параметрів:
+    - [<u>n_fop</u>](https://check.finap.com.ua/apiinfo/#n_fop) - чи є (була) дана особа ФОП;
+    - [<u>is_actual_pep</u>](https://check.finap.com.ua/apiinfo/#is_actual_pep) - підтвердження з реєстру «Політично значущі особи» про те що дана особа являється публічною;
+    - [<u>n_mb</u>](https://check.finap.com.ua/apiinfo/#n_mb) - мультибенефіціарність - кількість юридичних осіб в яких дана особа ще є бенефіціаром (виключно з даною);
+    - [<u>rel_edrpou</u>](https://check.finap.com.ua/apiinfo/#rel_edrpou) - перелік ЄДРПОУ в яких дана особа ще є бенефіціаром (виключно з даною);
+    - [<u>address_mb</u>](https://check.finap.com.ua/apiinfo/#address_mb) - мультибенефіціарна адреса – кількість бенефіціарів зареєстрованих на адресу даного бенефіціара, якщо таких є більше ніж один;
+    - [<u>edrpou_adr_mb</u>](https://check.finap.com.ua/apiinfo/#edrpou_adr_mb) - Перелік ЄДРПОУ, в яких є бенефіціарами інші особи, що є зареєстровані за даній адресою.
+    - [<u>n_pep_ids</u>](https://check.finap.com.ua/apiinfo/#n_pep_ids) – Перелік ідентифікаторів записів в реєстрі “Політично значущі особи”, що стосуються збігів по КБВ/засновнику/учаснику
+    - [<u>n_san_ids</u>](https://check.finap.com.ua/apiinfo/#n_pep_ids) – Перелік ідентифікаторів записів в реєстрі “Санкції”, що стосуються збігів по КБВ/засновнику/учаснику
+
+### **1.1**
+
+- Додано новий пошуковий реєстр [<u>“Виконавчі провадження”(executive)</u>](https://check.finap.com.ua/apiinfo/#executive)
+- Вхідні параметри [<u>doctype</u>](https://check.finap.com.ua/apiinfo/#doctype) - Тип документу. Може приймати значення 1 (ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ в тому числі і ID карти) та 2 (ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ ДЛЯ ВИЇЗДУ ЗА КОРДОН) Якщо вказати даний параметр то пошук буде відбуватися лише серед документів даного типу інакше пошук відбувається не залежно від типу документу.
+- Вихідні параметри **level** - рівень співпадіння в реєстрах [<u>"Політично значущі особи"</u>](https://check.finap.com.ua/apiinfo/#levelpep) та [<u>"Санкції"</u>](https://check.finap.com.ua/apiinfo/#levelsan). Може приймати значення "Високий" і "Низький".
+- В блоці відповіді по пошуковим реєстрам додано тестове повідомлення з помилкою [<u>"9004.Відсутній зв'язок з базою даних сервісу"</u>](https://check.finap.com.ua/apiinfo/#error9004)
+
+### **1.0**
+
+- Замінено вхідний параметр address на [<u>city</u>](https://check.finap.com.ua/apiinfo/#city). Даний параметр використовується в пошуку інформації ЄДР ЮО і ФОП (особливо при пошук ФОПів) та в реєстрі податкових боржників (особливо при пошук фізичних осіб або ФОПів)
+- В блоці відповіді по пошуковому реєстру «Політично значущі особи» добавлено 2 вихідних параметра [<u>typePEP</u>](https://check.finap.com.ua/apiinfo/#typePEP), [<u>descriptiontypePEP</u>](https://check.finap.com.ua/apiinfo/#descriptiontypePEP), а також параметр [<u>categoryPEP</u>](https://check.finap.com.ua/apiinfo/#categoryPEP) тепер може містити перелік (через “;”) категорій, до яких відноситься ПЕП згідно довідника НБУ K019
+- В блоці відповіді по пошуковому реєстру «Санкції» у відповіді по реєстрах РНБО добавлено структуру [<u>sanctionSource</u>](https://check.finap.com.ua/apiinfo/#sanctionSource) з описом джерела, з якого вона була внесена (наказ президента)
+- В блоці відповіді по пошуковому реєстру «Податкові боржники» добавлено вихідний параметр [<u>dsumesv</u>](https://check.finap.com.ua/apiinfo/#dsumesv) – борг по ЄСВ
+- В блоці відповіді по пошуковому реєстру «Ліцензії» додано блок [<u>gambling</u>](https://check.finap.com.ua/apiinfo/#gambling), що стосується ліцензій грального бізнесу.

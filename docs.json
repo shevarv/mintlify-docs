@@ -1,0 +1,203 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "willow",
+  "name": "CheckLists",
+  "colors": {
+    "primary": "#110960",
+    "light": "#0648c9",
+    "dark": "#0b216b"
+  },
+  "favicon": {
+    "light": "/images/favicon.ico",
+    "dark": "/images/favicon.ico"
+  },
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "CheckLists",
+          "icon": "book-open-cover",
+          "color": {
+            "light": "#4d15a3",
+            "dark": "#4d15a3"
+          },
+          "href": "https://checklists.fin-observe.com"
+        },
+        {
+          "anchor": "FinAP",
+          "icon": "newspaper",
+          "color": {
+            "light": "#2c15a3",
+            "dark": "#2c15a3"
+          },
+          "href": "https://finap.com.ua/check-lists/"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "language": "uk",
+        "tabs": [
+          {
+            "tab": "CheckLists",
+            "pages": [
+              "check-lists/produkt",
+              "uk/check-lists/advertisement",
+              "uk/check-lists/whatsnew",
+              "uk/check-lists/vebinars",
+              "uk/check-lists/input",
+              "uk/check-lists/listdata",
+              {
+                "group": "REST API",
+                "openapi": "openapi.json",
+                "pages": [
+                  "uk/check-lists/rest-api/test"
+                ]
+              },
+              "uk/check-lists/references",
+              "uk/check-lists/errors",
+              "uk/check-lists/faq"
+            ]
+          }
+        ]
+      },
+      {
+        "language": "pl",
+        "tabs": [
+          {
+            "tab": "CheckLists",
+            "pages": [
+              "pl/check-lists/o-produkte",
+              "uk/check-lists/untitled-page-copied-1",
+              "uk/check-lists/untitled-page-1-copied-1",
+              "uk/check-lists/vebinari-copied-1",
+              "uk/check-lists/vkhidni-parametri-copied-1",
+              {
+                "group": "REST API",
+                "pages": [
+                  "peps-copied-1",
+                  "psanction-copied-1",
+                  "edrfullinfo-copied-1",
+                  "edr-copied-1",
+                  "debtor-copied-1",
+                  "edrchanges-copied-1",
+                  "lostdocs-copied-1",
+                  "licenses-copied-1",
+                  "justice-copied-1",
+                  "executive-copied-1",
+                  "okupants-copied-1",
+                  "zrada-copied-1",
+                  "nonresedent-copied-1",
+                  "notarius-copied-1",
+                  "bankrupts-copied-1",
+                  "wanted-copied-1",
+                  "corrupt-copied-1"
+                ]
+              },
+              "uk/check-lists/untitled-page-2-copied-1",
+              "uk/check-lists/untitled-page-3-copied-1",
+              "uk/check-lists/faq-copied-1"
+            ]
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "tabs": [
+          {
+            "tab": "CheckLists",
+            "pages": [
+              "en/check-lists/about-product",
+              "uk/check-lists/untitled-page-copied-2",
+              "uk/check-lists/untitled-page-1-copied-2",
+              "uk/check-lists/vebinari-copied-2",
+              "uk/check-lists/vkhidni-parametri-copied-2",
+              {
+                "group": "REST API",
+                "pages": [
+                  "peps-copied-2",
+                  "psanction-copied-2",
+                  "edrfullinfo-copied-2",
+                  "edr-copied-2",
+                  "debtor-copied-2",
+                  "edrchanges-copied-2",
+                  "lostdocs-copied-2",
+                  "licenses-copied-2",
+                  "justice-copied-2",
+                  "executive-copied-2",
+                  "okupants-copied-2",
+                  "zrada-copied-2",
+                  "nonresedent-copied-2",
+                  "notarius-copied-2",
+                  "bankrupts-copied-2",
+                  "wanted-copied-2",
+                  "corrupt-copied-2"
+                ]
+              },
+              "uk/check-lists/untitled-page-2-copied-2",
+              "uk/check-lists/untitled-page-3-copied-2",
+              "uk/check-lists/faq-copied-2"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/photo_2026-01-08_15-04-27.jpg",
+    "dark": "/images/Logo--ECleQcD.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@finap.com.ua"
+      }
+    ]
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
+  },
+  "footer": {
+    "socials": {
+      "telegram": "https://t.me/finap_channel",
+      "facebook": "https://www.facebook.com/news.finap"
+    }
+  },
+  "description": "FinAP ChecklIsts documentation ",
+  "background": {
+    "color": {
+      "dark": "#020c2c"
+    },
+    "decoration": "gradient"
+  },
+  "appearance": {
+    "default": "system"
+  },
+  "integrations": {
+    "telemetry": {
+      "enabled": true
+    }
+  },
+  "styling": {
+    "eyebrows": "section"
+  },
+  "api": {
+    "playground": {
+      "proxy": false,
+      "display": "interactive"
+    }
+  },
+  "openapi": {
+    "file": "openapi.json"
+  }
+}
