@@ -1,216 +1,2118 @@
 {
-  "openapi": "3.1.0",
+  "openapi": "3.0.2",
   "info": {
-    "title": "OpenAPI Plant Store",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "title": "Swagger Check List",
+    "description": "Це приклад надсилання АПІ запитів до реєстрів Check List",
+    "contact": {
+      "name": "Пошта",
+      "email": "info@finap.com.ua"
+    },
     "license": {
-      "name": "MIT"
+      "name": "Proprietary"
     },
     "version": "1.0.0"
   },
+  "externalDocs": {
+    "description": "Щось ще",
+    "url": "https://finap.com.ua"
+  },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://finap.com.ua:9443"
     }
   ],
-  "security": [
+  "tags": [
     {
-      "bearerAuth": []
+      "name": "pep",
+      "description": "Публічно-значущі особи",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "sunction",
+      "description": "Санкційні списки",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "lostdocs",
+      "description": "Втрачені/недійсні паспорта",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "edr",
+      "description": "Причетність до ЮО",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "edrinfo",
+      "description": "ЄДР ЮО і ФОП",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "edrfullinfo",
+      "description": "ЄДР ЮО і ФОП (розширений)",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "edrchanges",
+      "description": "Зміни в ЮО",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "debtor",
+      "description": "Боржники",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "licenses",
+      "description": "Ліцензії",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "justice",
+      "description": "Судові справи",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "executive",
+      "description": "Виконавчі провадження",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "zrada",
+      "description": "Державні зрадники",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "okupant",
+      "description": "Окупанти",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "nonrezedent",
+      "description": "Нерезеденти",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "notarius",
+      "description": "Нотаріуси",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "bankrupt",
+      "description": "Банкрути",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "wanted",
+      "description": "Розшук МВС і СБУ",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "corrupt",
+      "description": "Корупціонери",
+      "externalDocs": {
+        "description": "Детальніше",
+        "url": "https://finap.com.ua"
+      }
+    },
+    {
+      "name": "user",
+      "description": "Operations about user"
     }
   ],
   "paths": {
-    "/plants": {
+    "/api?tokken=&IDsubjectFM=&listdata=7680&name=&namelat=&date=&ipn=&search=&lowranklimit=": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "tags": ["pep"],
+        "summary": "",
+        "description": "Публічні особи",
+        "operationId": "getPep",
         "parameters": [
           {
-            "name": "limit",
+            "name": "tokken",
             "in": "query",
-            "description": "The maximum number of results to return",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я кирилецею",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "namelat",
+            "in": "query",
+            "description": "Ім'я латинецею",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "Інн",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "number"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Дата",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "default": " "
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Приймає значення (1 - 2)",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Приймає значення від 0 до 100",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Plant response",
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Plant"
-                  }
+                  "$ref": "#/components/schemas/pep400"
                 }
               }
             }
           },
-          "400": {
-            "description": "Unexpected error",
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/pep500"
                 }
               }
             }
           }
-        }
-      },
-      "post": {
-        "description": "Creates a new plant in the store",
-        "requestBody": {
-          "description": "Plant to add to the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPlant"
-              }
-            }
-          },
-          "required": true
         },
-        "responses": {
-          "200": {
-            "description": "plant response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Plant"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
+        "security": [
+          {
+            "api_key": []
           }
-        }
+        ]
       }
     },
-    "/plants/{id}": {
-      "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
+    "/api?tokken=&IDsubjectFM=&listdata=255&name=&namelat=&ipn=&date=&address=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["sunction"],
+        "summary": "",
+        "description": "Санкційні списки",
+        "operationId": "getSunction",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "ID of plant to delete",
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
             "required": true,
+            "style": "simple",
+            "explode": false,
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я кирилецею",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "namelat",
+            "in": "query",
+            "description": "Ім'я латинецею",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "Інн",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "number"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Дата",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "Адреса",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Приймає значення (1 - 2)",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Приймає значення від 0 до 100",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
             }
           }
         ],
         "responses": {
-          "204": {
-            "description": "Plant deleted",
-            "content": {}
-          },
-          "400": {
-            "description": "unexpected error",
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
       }
-    }
-  },
-  "webhooks": {
-    "/plant/webhook": {
-      "post": {
-        "description": "Information about a new plant added to the store",
-        "requestBody": {
-          "description": "Plant added to the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=32768&doc=&doctype=": {
+      "get": {
+        "tags": ["lostdocs"],
+        "summary": "",
+        "description": "Втрачені документи",
+        "operationId": "getLostdocs",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "doc",
+            "in": "query",
+            "description": "Документ",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "doctype",
+            "in": "query",
+            "description": "Тип документу",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the data was received successfully"
+        "security": [
+          {
+            "api_key": []
           }
-        }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=1048576&name=&ipn=&date=": {
+      "get": {
+        "tags": ["edr"],
+        "summary": "",
+        "description": "Причетність до юридичної особи",
+        "operationId": "getEdr",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Назва",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "ІНН",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Date",
+            "in": "query",
+            "description": "Дата",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=2097152&name=&ipn=&address=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["edrinfo"],
+        "summary": "",
+        "description": "ЄДР ЮО і ФОП",
+        "operationId": "getEdrinfo",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Назва",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "ІНН",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "Адреса",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=4194304&name=&ipn=&address=&onlyactual=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["edrfullinfo"],
+        "summary": "",
+        "description": "ЄДР ЮО і ФОП",
+        "operationId": "getEdrfullinfo",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Назва",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "ІНН",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "Адреса",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "onlyactual",
+            "in": "query",
+            "description": "Актуальність",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=1065353216&ipn=&arrayedrpou=&edrchangesfrom=&edrchangesto=": {
+      "get": {
+        "tags": ["edrchanges"],
+        "summary": "",
+        "description": "ЄДР зміни",
+        "operationId": "getEdrchanges",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "ІНН",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "Адреса",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "arrayedrpou",
+            "in": "query",
+            "description": "Список ЄДПОУ",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "edrchangesfrom",
+            "in": "query",
+            "description": "Зміни в ЄДР",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "edrchangesto",
+            "in": "query",
+            "description": "Зміни в ЄДР",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=131072&name=&ipn=&city=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["debtor"],
+        "summary": "",
+        "description": "Реєстр боржників",
+        "operationId": "getDebtor",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "ІНН",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "Місто",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=2147483648&name=&ipn=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["licenses"],
+        "summary": "",
+        "description": "Ліцензії",
+        "operationId": "getLicenses",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "ІНН",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=1073741824&name=&ipn=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["justice"],
+        "summary": "",
+        "description": "Реєстр судових справ",
+        "operationId": "getLicenses",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "ІНН",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=65536&name=&ipn=&date=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["executive"],
+        "summary": "",
+        "description": "Реєстр виконавчих проваджень",
+        "operationId": "getLicenses",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Дата",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "ІНН",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=8192&name=&date=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["zrada", "okupant"],
+        "summary": "",
+        "description": "Реєстр зрадників / Реєстр окупантів",
+        "operationId": "getLicenses",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Дата",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=16384&name=&nonrezedentcode=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["nonrezedent"],
+        "summary": "",
+        "description": "Нерезеденти",
+        "operationId": "getLicenses",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "nonrezedentcode",
+            "in": "query",
+            "description": "Код не резидента",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=256&name=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["notarius"],
+        "summary": "",
+        "description": "Нотаріуси",
+        "operationId": "getLicenses",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=524288&name=&ipn=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["bankrupt"],
+        "summary": "",
+        "description": "Банкрути",
+        "operationId": "getLicenses",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "ІНН",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=8589934592&name=&date=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["wanted"],
+        "summary": "",
+        "description": "Реєстр розшуку СБУ і МВС",
+        "operationId": "getLicenses",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "Date",
+            "in": "query",
+            "description": "Дата",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/api?tokken=&IDsubjectFM=&listdata=34359738368&name=&search=&lowranklimit=": {
+      "get": {
+        "tags": ["corrupt"],
+        "summary": "",
+        "description": "Корупціонери",
+        "operationId": "getLicenses",
+        "parameters": [
+          {
+            "name": "tokken",
+            "in": "query",
+            "description": "Токен",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Пошук",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Межа співпадінь",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "4xx": {
+            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep400"
+                }
+              }
+            }
+          },
+          "5xx": {
+            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pep500"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
       }
     }
   },
   "components": {
     "schemas": {
-      "Plant": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "description": "The name of the plant",
-            "type": "string"
-          },
-          "tag": {
-            "description": "Tag to specify the type",
-            "type": "string"
-          }
-        }
-      },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
+      "pep400": {
+        "example": {
+          "idinternal": "",
+          "idsubjectFM": "finap_test",
+          "iduserPC": "",
+          "idrequest": "16440497",
+          "dateResponse": "2023-11-22T12:00:22.238",
+          "listdata": "7680",
+          "search": "1",
+          "responsetype": "5",
+          "textformat": "",
+          "result": {
+            "peps": {
+              "error1": "9001.Доступ до сервісу заборонений - Доступ до пошукового реєстру заборонений, так як він не входить в пакет послуг, які ви оплатили",
+              "error3": "9003.Обробка запиту перевищує виділений для цього час. Уточніть запит – виникає коли обробка запиту до пошукового реєстру перевищує виділений для цього час",
+              "error4": "9004.Відсутній зв'язок з базою даних сервісу - виникає коли сервіс, який обслуговує реєстр, доступний, проте відсутній зв'язок з базою даних реєстру"
             }
           }
-        ]
+        }
       },
-      "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
+      "pep500": {
+        "example": {
+          "idinternal": "",
+          "idsubjectFM": "finap_test",
+          "iduserPC": "",
+          "idrequest": "16440497",
+          "dateResponse": "2023-11-22T12:00:22.238",
+          "listdata": "7680",
+          "search": "1",
+          "responsetype": "5",
+          "textformat": "",
+          "result": {
+            "peps": {
+              "error": "9000.Відсутній зв'язок з сервісом – Пошуковий реєстр не працює або сервіс немає зв’язку з ним"
+            }
           }
         }
-      }
-    },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
       }
     }
   }
