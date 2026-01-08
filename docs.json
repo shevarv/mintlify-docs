@@ -49,10 +49,7 @@
               "uk/check-lists/listdata",
               {
                 "group": "REST API",
-                "openapi": "openapi.json",
-                "pages": [
-                  "uk/check-lists/rest-api/test"
-                ]
+                "openapi": "openapi.json"
               },
               "uk/check-lists/references",
               "uk/check-lists/errors",
