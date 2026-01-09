@@ -41,7 +41,7 @@
           {
             "tab": "CheckLists",
             "pages": [
-              "check-lists/produkt",
+              "uk/check-lists/produkt",
               "uk/check-lists/advertisement",
               "uk/check-lists/whatsnew",
               "uk/check-lists/vebinars",
@@ -64,37 +64,18 @@
           {
             "tab": "CheckLists",
             "pages": [
-              "pl/check-lists/o-produkte",
-              "uk/check-lists/untitled-page-copied-1",
-              "uk/check-lists/untitled-page-1-copied-1",
-              "uk/check-lists/vebinari-copied-1",
-              "uk/check-lists/vkhidni-parametri-copied-1",
+              "pl/check-lists/produkt",
+              "pl/check-lists/advertisement",
+              "pl/check-lists/whatsnew",
+              "pl/check-lists/vebinars",
+              "pl/check-lists/input",
               {
                 "group": "REST API",
-                "openapi": "openapi_pl.json",
-                "pages": [
-                  "peps-copied-1",
-                  "psanction-copied-1",
-                  "edrfullinfo-copied-1",
-                  "edr-copied-1",
-                  "debtor-copied-1",
-                  "edrchanges-copied-1",
-                  "lostdocs-copied-1",
-                  "licenses-copied-1",
-                  "justice-copied-1",
-                  "executive-copied-1",
-                  "okupants-copied-1",
-                  "zrada-copied-1",
-                  "nonresedent-copied-1",
-                  "notarius-copied-1",
-                  "bankrupts-copied-1",
-                  "wanted-copied-1",
-                  "corrupt-copied-1"
-                ]
+                "openapi": "openapi_pl.json"
               },
-              "uk/check-lists/untitled-page-2-copied-1",
-              "uk/check-lists/untitled-page-3-copied-1",
-              "uk/check-lists/faq-copied-1"
+              "pl/check-lists/references",
+              "pl/check-lists/errors",
+              "pl/check-lists/faq"
             ]
           }
         ]
@@ -105,37 +86,37 @@
           {
             "tab": "CheckLists",
             "pages": [
-              "en/check-lists/about-product",
-              "uk/check-lists/untitled-page-copied-2",
-              "uk/check-lists/untitled-page-1-copied-2",
-              "uk/check-lists/vebinari-copied-2",
-              "uk/check-lists/vkhidni-parametri-copied-2",
+              "en/check-lists/produkt",
+              "en/check-lists/advertisement",
+              "en/check-lists/whatsnew",
+              "en/check-lists/vebinars",
+              "en/check-lists/input",
               {
                 "group": "REST API",
                 "openapi": "openapi_pl.json",
                 "pages": [
-                  "peps-copied-2",
-                  "psanction-copied-2",
-                  "edrfullinfo-copied-2",
-                  "edr-copied-2",
-                  "debtor-copied-2",
-                  "edrchanges-copied-2",
-                  "lostdocs-copied-2",
-                  "licenses-copied-2",
-                  "justice-copied-2",
-                  "executive-copied-2",
-                  "okupants-copied-2",
-                  "zrada-copied-2",
-                  "nonresedent-copied-2",
-                  "notarius-copied-2",
-                  "bankrupts-copied-2",
-                  "wanted-copied-2",
-                  "corrupt-copied-2"
+                  "uk/check-lists/peps",
+                  "uk/check-lists/psanction",
+                  "uk/check-lists/edrfullinfo",
+                  "uk/check-lists/edr",
+                  "uk/check-lists/debtor",
+                  "uk/check-lists/edrchanges",
+                  "uk/check-lists/lostdocs",
+                  "uk/check-lists/licenses",
+                  "uk/check-lists/justice",
+                  "uk/check-lists/executive",
+                  "uk/check-lists/okupants",
+                  "uk/check-lists/zrada",
+                  "uk/check-lists/nonresedent",
+                  "uk/check-lists/notarius",
+                  "uk/check-lists/bankrupts",
+                  "uk/check-lists/wanted",
+                  "uk/check-lists/corrupt"
                 ]
               },
-              "uk/check-lists/untitled-page-2-copied-2",
-              "uk/check-lists/untitled-page-3-copied-2",
-              "uk/check-lists/faq-copied-2"
+              "en/check-lists/references",
+              "en/check-lists/errors",
+              "en/check-lists/faq"
             ]
           }
         ]
