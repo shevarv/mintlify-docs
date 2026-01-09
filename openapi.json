@@ -432,7 +432,286 @@
                         "type": [
                             "array",
                             "string"
-                        ]
+                        ],
+                        "items": {
+                              "$id": "#items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#items/anyOf/0",
+                                      "type": "object",
+                                      "properties": {
+                                          "edrpou": {
+                                              "$id": "#items/anyOf/0/properties/edrpou",
+                                              "type": "string",
+                                              "title": "ЄДРПОУ/ІПН",
+                                              "description": "Код ЄДРПОУ/ІПН"
+                                          },
+                                          "build": {
+                                              "$id": "#items/anyOf/0/properties/build",
+                                              "type": "array",
+                                              "title": "Будівельні ліцензії",
+                                              "description": "Блок що стосується будівельних ліцензій",
+                                              "items": {
+                                                  "$id": "#items/anyOf/0/properties/build/items",
+                                                  "anyOf": [
+                                                      {
+                                                          "$id": "#items/anyOf/0/properties/build/items/anyOf/0",
+                                                          "type": "object",
+                                                          "properties": {
+                                                              "id": {
+                                                                  "$id": "#items/anyOf/0/properties/build/items/anyOf/0/properties/id",
+                                                                  "type": "integer",
+                                                                  "title": "Ідентифікатор ліцензії",
+                                                                  "description": "Ідентифікатор ліцензії"
+                                                              },
+                                                              "vud": {
+                                                                  "$id": "#items/anyOf/0/properties/build/items/anyOf/0/properties/vud",
+                                                                  "type": "string",
+                                                                  "title": "Вид ліцензії",
+                                                                  "description": "Вид ліцензії"
+                                                              },
+                                                              "lic": {
+                                                                  "$id": "#items/anyOf/0/properties/build/items/anyOf/0/properties/lic",
+                                                                  "type": "string",
+                                                                  "title": "Номер ліцензії",
+                                                                  "description": "Номер ліцензії"
+                                                              },
+                                                              "name": {
+                                                                  "$id": "#items/anyOf/0/properties/build/items/anyOf/0/properties/name",
+                                                                  "type": "string",
+                                                                  "title": "Назва особи",
+                                                                  "description": "Назва (ПІБ) особи який було видано будівельну ліцензію"
+                                                              },
+                                                              "address": {
+                                                                  "$id": "#items/anyOf/0/properties/build/items/anyOf/0/properties/address",
+                                                                  "type": "string",
+                                                                  "title": "Адреса",
+                                                                  "description": "Адреса особи"
+                                                              },
+                                                              "datebegin": {
+                                                                  "$id": "#items/anyOf/0/properties/build/items/anyOf/0/properties/datebegin",
+                                                                  "type": "string",
+                                                                  "title": "Дата видачі ліцензії",
+                                                                  "description": "Дата видачі ліцензії"
+                                                              },
+                                                              "dateend": {
+                                                                  "$id": "#items/anyOf/0/properties/build/items/anyOf/0/properties/dateend",
+                                                                  "type": "string",
+                                                                  "title": "Дата закінчення ліцензії",
+                                                                  "description": "Дата закінчення ліцензії"
+                                                              }
+                                                          }
+                                                      }
+                                                  ]
+                                              }
+                                          },
+                                          "gambling": {
+                                              "$id": "#items/anyOf/0/properties/gambling",
+                                              "type": "array",
+                                              "title": "Ліцензії на провадження діяльності з організації та проведення азартних ігор",
+                                              "description": "Блок що стосується ліцензії на провадження діяльності з організації та проведення азартних ігор",
+                                              "items": {
+                                                  "$id": "#items/anyOf/0/properties/gambling/items",
+                                                  "anyOf": [
+                                                      {
+                                                          "$id": "#items/anyOf/0/properties/gambling/items/anyOf/0",
+                                                          "type": "object",
+                                                          "properties": {
+                                                              "name": {
+                                                                  "$id": "#items/anyOf/0/properties/gambling/items/anyOf/0/properties/name",
+                                                                  "type": "string",
+                                                                  "title": "Назва",
+                                                                  "description": "Назва юридичної особи"
+                                                              },
+                                                              "address": {
+                                                                  "$id": "#items/anyOf/0/properties/gambling/items/anyOf/0/properties/address",
+                                                                  "type": "string",
+                                                                  "title": "Місцезнаходження",
+                                                                  "description": "Місцезнаходження юридичної особи"
+                                                              },
+                                                              "license": {
+                                                                  "$id": "#items/anyOf/0/properties/gambling/items/anyOf/0/properties/license",
+                                                                  "type": "string",
+                                                                  "title": "Рішення про видачу ліцензії",
+                                                                  "description": "Рішення про видачу ліцензії (дата прийняття, номер рішення)"
+                                                              },
+                                                              "datelicense": {
+                                                                  "$id": "#items/anyOf/0/properties/gambling/items/anyOf/0/properties/datelicense",
+                                                                  "type": "string",
+                                                                  "title": "Дата видачі",
+                                                                  "description": "Дата видачі ліцензії"
+                                                              },
+                                                              "brandname": {
+                                                                  "$id": "#items/anyOf/0/properties/gambling/items/anyOf/0/properties/brandname",
+                                                                  "type": "string",
+                                                                  "title": "Бренд",
+                                                                  "description": "Бренд організатора азартних ігор"
+                                                              },
+                                                              "ntypelic": {
+                                                                  "$id": "#items/anyOf/0/properties/gambling/items/anyOf/0/properties/ntypelic",
+                                                                  "type": "integer",
+                                                                  "title": "Цифровий код типу ліцензії",
+                                                                  "description": "Цифровий код типу ліцензії:(1 - 'ліцензія на провадження діяльності з організації та проведення азартних ігор казино у мережі інтернет'; 2 - 'ліцензія на провадження діяльності з організації та проведення азартних ігор у гральних закладах казино'; 3 - 'ліцензія на провадження діяльності з організації та проведення азартних ігор у залах гральних автоматів'; 4 - 'ліцензія на провадження діяльності з організації та проведення азартних ігор у покер у мережі Інтернет'; 5 - 'ліцензія на провадження діяльності з організації та проведення букмекерської діяльності')"
+                                                              },
+                                                              "typelic": {
+                                                                  "$id": "#items/anyOf/0/properties/gambling/items/anyOf/0/properties/typelic",
+                                                                  "type": "string",
+                                                                  "title": "Тип ліцензії",
+                                                                  "description": "Тип ліцензії"
+                                                              },
+                                                              "description": {
+                                                                  "$id": "#items/anyOf/0/properties/gambling/items/anyOf/0/properties/description",
+                                                                  "type": "string",
+                                                                  "title": "Місце провадження ліцензіатом діяльності",
+                                                                  "description": "Місце провадження ліцензіатом діяльності (місце розташування грального закладу (адреса) та площа грального закладу)"
+                                                              }
+                                                          }
+                                                      }
+                                                  ]
+                                              }
+                                          },
+                                          "bonds": {
+                                              "$id": "#items/anyOf/0/properties/bonds",
+                                              "type": "array",
+                                              "title": "Цінні парери",
+                                              "description": "Блок що стосується цінних паперів",
+                                              "items": {
+                                                  "$id": "#items/anyOf/0/properties/bonds/items",
+                                                  "anyOf": [
+                                                      {
+                                                          "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0",
+                                                          "type": "object",
+                                                          "properties": {
+                                                              "id": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/id",
+                                                                  "type": "integer",
+                                                                  "title": "Ідентифікатор цінних паперів",
+                                                                  "description": "Ідентифікатор цінних паперів"
+                                                              },
+                                                              "sertificates_nom": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/sertificates_nom",
+                                                                  "type": "string",
+                                                                  "title": "Реєстраційний номер свідоцтва про реєстрацію випуску",
+                                                                  "description": "Реєстраційний номер свідоцтва про реєстрацію випуску"
+                                                              },
+                                                              "edrpou": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/edrpou",
+                                                                  "type": "string",
+                                                                  "title": "ЄДРПОУ",
+                                                                  "description": "Код за ЄДРПОУ емітента"
+                                                              },
+                                                              "entity_form": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/entity_form",
+                                                                  "type": "string",
+                                                                  "title": "Організаційно правова форма",
+                                                                  "description": "Організаційно правова форма емітента"
+                                                              },
+                                                              "name": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/name",
+                                                                  "type": "string",
+                                                                  "title": "Найменування емітента",
+                                                                  "description": "Найменування емітента"
+                                                              },
+                                                              "emis_type_name": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/emis_type_name",
+                                                                  "type": "string",
+                                                                  "title": "Вид цінних паперів",
+                                                                  "description": "Вид цінних паперів (Акції/Облігації)"
+                                                              },
+                                                              "qty": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/qty",
+                                                                  "type": "integer",
+                                                                  "title": "Кількість цінних паперів",
+                                                                  "description": "Кількість цінних паперів"
+                                                              },
+                                                              "nominal": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/nominal",
+                                                                  "type": "number",
+                                                                  "title": "Номінальна вартість",
+                                                                  "description": "Номінальна вартість"
+                                                              },
+                                                              "emis_vol": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/emis_vol",
+                                                                  "type": "integer",
+                                                                  "title": "Загальна номінальна вартість випуску",
+                                                                  "description": "Загальна номінальна вартість випуску"
+                                                              },
+                                                              "stat_cap": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/stat_cap",
+                                                                  "type": "integer",
+                                                                  "title": "Розмір статутного капіталу",
+                                                                  "description": "Розмір статутного капіталу"
+                                                              },
+                                                              "releases_form_code": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/releases_form_code",
+                                                                  "type": "string",
+                                                                  "title": "Форма існування",
+                                                                  "description": "Форма існування"
+                                                              },
+                                                              "tp_name": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/tp_name",
+                                                                  "type": "string",
+                                                                  "title": "Тип цінних паперів",
+                                                                  "description": "Тип цінних паперів"
+                                                              },
+                                                              "reg_date": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/reg_date",
+                                                                  "type": "string",
+                                                                  "title": "Дата реєстрації випуску цінних паперів",
+                                                                  "description": "Дата реєстрації випуску цінних паперів"
+                                                              },
+                                                              "report_reg_dt": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/report_reg_dt",
+                                                                  "type": "string",
+                                                                  "title": "Дата реєстрації звіту про результати розміщення цінних паперів",
+                                                                  "description": "Дата реєстрації звіту про результати розміщення цінних паперів"
+                                                              },
+                                                              "suspend_nom": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/suspend_nom",
+                                                                  "type": "string",
+                                                                  "title": "Номер розпорядження про зупинення обігу",
+                                                                  "description": "Номер розпорядження про зупинення обігу"
+                                                              },
+                                                              "suspend_dt": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/suspend_dt",
+                                                                  "type": "string",
+                                                                  "title": "Дата видачі розпорядження про зупинення обігу",
+                                                                  "description": "Дата видачі розпорядження про зупинення обігу"
+                                                              },
+                                                              "resume_nom": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/resume_nom",
+                                                                  "type": "string",
+                                                                  "title": "Номер розпорядження про відновлення обігу",
+                                                                  "description": "Номер розпорядження про відновлення обігу"
+                                                              },
+                                                              "resume_dt": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/resume_dt",
+                                                                  "type": "string",
+                                                                  "title": "Дата видачі розпорядження про відновлення обігу",
+                                                                  "description": "Дата видачі розпорядження про відновлення обігу"
+                                                              },
+                                                              "cancel_nom": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/cancel_nom",
+                                                                  "type": "string",
+                                                                  "title": "Номер розпорядження про скасування реєстрації випуску",
+                                                                  "description": "Номер розпорядження про скасування реєстрації випуску"
+                                                              },
+                                                              "series": {
+                                                                  "$id": "#items/anyOf/0/properties/bonds/items/anyOf/0/properties/series",
+                                                                  "type": "string",
+                                                                  "title": "Серія випуску облігацій",
+                                                                  "description": "Серія випуску облігацій (у разі наявності)"
+                                                              }
+                                                          }
+                                                      }
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  }
+                              ]
+                        }
+                      
                     },
                     "executive": {
                         "$id": "#/properties/result/properties/executive",
