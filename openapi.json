@@ -108,7 +108,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "https://check.finap.com.ua/apiinfo/schema/v1/zrada.json"
+                    "$ref": "https://check.finap.com.ua/apiinfo/schema/v1/RequestSchema.json"
                   }
                 }
               }
