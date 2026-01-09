@@ -10,7 +10,20 @@
   },
   "servers": [
     {
-      "url": "https://finap.com.ua:9443"
+      "url": "https://finap.com.ua:9443",
+      "description": "Основний"
+    },
+    {
+      "url": "https://res1.finap.com.ua:9443",
+      "description": "Резерв"
+    },
+    {
+      "url": "https://res2.finap.com.ua:9443",
+      "description": "Резерв"
+    },
+    {
+      "url": "https://res3.finap.com.ua:9443",
+      "description": "Резерв"
     }
   ],
   "security": [
@@ -127,6 +140,7 @@
         }
       },
       "post": {
+        "summary": "CheckLists",
         "description": "Повертає результат з реєстрів CheckLists",
         "requestBody": {
           "content": {
