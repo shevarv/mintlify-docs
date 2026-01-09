@@ -193,8 +193,5 @@
       "proxy": false,
       "display": "interactive"
     }
-  },
-  "openapi": {
-    "file": "openapi.json"
   }
 }
