@@ -121,7 +121,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "./response.json"
+                    "$ref": "#/components/schemas/Success"
                   }
                 }
               }
@@ -495,7 +495,60 @@
                         "type": [
                             "array",
                             "string"
-                        ]
+                        ],
+                        "items": {
+                              "$id": "#items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#items/anyOf/0",
+                                      "type": "object",
+                                      "properties": {
+                                          "license": {
+                                              "$id": "#items/anyOf/0/properties/license",
+                                              "type": "string",
+                                              "title": "Номер ліцензії",
+                                              "description": "Номер ліцензії"
+                                          },
+                                          "name": {
+                                              "$id": "#items/anyOf/0/properties/name",
+                                              "type": "string",
+                                              "title": "ПІБ",
+                                              "description": "ПІБ нотаріуса"
+                                          },
+                                          "nameobj": {
+                                              "$id": "#items/anyOf/0/properties/nameobj",
+                                              "type": "string",
+                                              "title": "Назва ЮО",
+                                              "description": "Назва ЮО"
+                                          },
+                                          "region": {
+                                              "$id": "#items/anyOf/0/properties/region",
+                                              "type": "string",
+                                              "title": "Регіон",
+                                              "description": "Регіон"
+                                          },
+                                          "contacts": {
+                                              "$id": "#items/anyOf/0/properties/contacts",
+                                              "type": "string",
+                                              "title": "Контакти",
+                                              "description": "Контакти"
+                                          },
+                                          "percent": {
+                                              "$id": "#items/anyOf/0/properties/percent",
+                                              "type": "number",
+                                              "title": "Відсоток співпадіння за ПІБ",
+                                              "description": "Відсоток співпадіння за ПІБ"
+                                          },
+                                          "level": {
+                                              "$id": "#items/anyOf/0/properties/level",
+                                              "type": "string",
+                                              "title": "Рівень співпадіння в реєстрі",
+                                              "description": "Рівень співпадіння в реєстрі Нотаріуси. Поле level може приймати два значення Низький і Високий. На даний момент всі варіанти відповіді будуть мати Низький рівень співпадіння."
+                                          }
+                                      }
+                                  }
+                              ]
+                        }                      
                     },
                     "bankrupt": {
                         "$id": "#/properties/result/properties/bankrupt",
