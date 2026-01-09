@@ -15,7 +15,8 @@
   ],
   "security": [
     {
-      "api_key": []
+      "tokken": [], 
+      "IDsubjectFM" : []
     }
   ],
   "paths": {
@@ -105,7 +106,7 @@
               }
             }
           },
-          "400": {
+          "4XX": {
             "description": "Помилка",
             "content": {
               "application/json": {
@@ -140,7 +141,7 @@
               }
             }
           },
-          "400": {
+          "4XX": {
             "description": "Помилка",
             "content": {
               "application/json": {
@@ -190,11 +191,16 @@
       }
     },
     "securitySchemes": {
-      "api_key": {
+      "tokken": {
       "type": "apiKey",
       "name": "tokken",
       "in": "query"
-      }
+      },
+      "IDsubjectFM": {
+      "type": "apiKey",
+      "name": "IDsubjectFM",
+      "in": "query"
+      }      
     }
   }
 }
