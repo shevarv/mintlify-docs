@@ -131,7 +131,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Post"
+                "$ref": "#/components/schemas/PostRequest"
               }
             }
           },
@@ -164,7 +164,7 @@
   },
   "components": {
     "schemas": {
-      "Post": {
+      "PostRequest": {
         "required": [
           "tokken",
           "IDsubjectFM"
