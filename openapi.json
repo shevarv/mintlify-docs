@@ -233,6 +233,8 @@
         }
       },
       "Success": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$id": "https://check.finap.com.ua/apiinfo/schema/v1/RequestSchema.json",
         "type": "object",
         "title": "CheckLists Response",
         "description": "Схема відповіді на запит до сервісу CheckLists",
