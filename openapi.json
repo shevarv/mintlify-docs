@@ -624,7 +624,169 @@
                         "type": [
                             "array",
                             "string"
-                        ]
+                        ],
+                        "items": {
+                              "$id": "#items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#items/anyOf/0",
+                                      "type": "object",
+                                      "properties": {
+                                          "cause_num": {
+                                              "$id": "#items/anyOf/0/properties/cause_num",
+                                              "type": "string",
+                                              "title": "Номер судової справи",
+                                              "description": "Номер судової справи"
+                                          },
+                                          "name": {
+                                              "$id": "#items/anyOf/0/properties/name",
+                                              "type": "string",
+                                              "title": "Форма судочинства",
+                                              "description": "Форма судочинства"
+                                          },
+                                          "edrpou": {
+                                              "$id": "#items/anyOf/0/properties/edrpou",
+                                              "type": "string",
+                                              "title": "ЄДРПОУ"
+                                          },
+                                          "typeperson": {
+                                              "$id": "#items/anyOf/0/properties/typeperson",
+                                              "type": "string",
+                                              "title": "Роль особи у справі",
+                                              "description": "Роль особи у справі (ПОЗИВАЧ,ВІДПОВІДАЧ,СТЯГУВАЧ,ЗАЯВНИК,ЗАІНТЕРЕСОВАНА ОСОБА,БОРЖНИКТРЕТЯ ОСОБА, і т.д)"
+                                          },
+                                          "nameperson": {
+                                              "$id": "#items/anyOf/0/properties/nameperson",
+                                              "type": "string",
+                                              "title": "Найменування особи",
+                                              "description": "Найменування особи"
+                                          },
+                                          "case_description": {
+                                              "$id": "#items/anyOf/0/properties/case_description",
+                                              "type": "string",
+                                              "title": "Короткий опис справи"
+                                          },
+                                          "datails": {
+                                              "$id": "#items/anyOf/0/properties/datails",
+                                              "type": "string",
+                                              "title": "Деталі судової справи",
+                                              "description": "деталі справи у форматі (№рішення|Назва суду|Форма судочинства|Форма судового рішення|Суддя|Предмет спору|Дата ухвалення рішення|Посилання на рішення) розділені ';'"
+                                          },
+                                          "documents": {
+                                            "$id": "#items/anyOf/0/properties/documents",
+                                            "type": "array",
+                                            "title": "Масив даних про документи судової справи",
+                                            "items": {
+                                                "$id": "#items/anyOf/0/properties/documents/items",
+                                                "anyOf": [
+                                                    {
+                                                        "$id": "#items/anyOf/0/properties/documents/items/anyOf/0",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "doc_id": {
+                                                                "$id": "#items/anyOf/0/properties/documents/items/anyOf/0/properties/doc_id",
+                                                                "type": "string",
+                                                                "title": "Номер рішення"
+                                                            },
+                                                            "court": {
+                                                                "$id": "#items/anyOf/0/properties/documents/items/anyOf/0/properties/court",
+                                                                "type": "string",
+                                                                "title": "Назва суду"
+                                                            },
+                                                            "instance": {
+                                                                "$id": "#items/anyOf/0/properties/documents/items/anyOf/0/properties/instance",
+                                                                "type": "string",
+                                                                "title": "Форма судочинства"
+                                                            },
+                                                            "judgment_form": {
+                                                                "$id": "#items/anyOf/0/properties/documents/items/anyOf/0/properties/judgment_form",
+                                                                "type": "string",
+                                                                "title": "|Форма судового рішення"
+                                                            },
+                                                            "judge": {
+                                                                "$id": "#items/anyOf/0/properties/documents/items/anyOf/0/properties/judge",
+                                                                "type": "string",
+                                                                "title": "Суддя"
+                                                            },
+                                                            "cause_categorie": {
+                                                                "$id": "#items/anyOf/0/properties/documents/items/anyOf/0/properties/cause_categorie",
+                                                                "type": "string",
+                                                                "title": "Предмет спору"
+                                                            },
+                                                            "adjudication_date": {
+                                                                "$id": "#items/anyOf/0/properties/documents/items/anyOf/0/properties/adjudication_date",
+                                                                "type": "string",
+                                                                "title": "Дата ухвалення рішення"
+                                                            },
+                                                            "doc_url": {
+                                                                "$id": "#items/anyOf/0/properties/documents/items/anyOf/0/properties/doc_url",
+                                                                "type": "string",
+                                                                "title": "Посилання на рішення"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                          },
+                                          "persons": {
+                                              "$id": "#items/anyOf/0/properties/persons",
+                                              "type": "string",
+                                              "title": "Учасники судової справи",
+                                              "description": "Інші учасники судової справи у форматі (роль особи у справі:назва особи:Назва суду:Дата засідання) розділені ';'"
+                                          },
+                                          "personsList": {
+                                            "$id": "#items/anyOf/0/properties/personsList",
+                                            "type": "array",
+                                            "title": "Масив даних про учасників судової справи",
+                                            "items": {
+                                                "$id": "#items/anyOf/0/properties/personsList/items",
+                                                "anyOf": [
+                                                    {
+                                                        "$id": "#items/anyOf/0/properties/personsList/items/anyOf/0",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "type": {
+                                                                "$id": "#items/anyOf/0/properties/personsList/items/anyOf/0/properties/type",
+                                                                "type": "string",
+                                                                "title": "Роль особи у справі"
+                                                            },
+                                                            "name": {
+                                                                "$id": "#items/anyOf/0/properties/personsList/items/anyOf/0/properties/name",
+                                                                "type": "string",
+                                                                "title": "Назва особи"
+                                                            },
+                                                            "court": {
+                                                                "$id": "#items/anyOf/0/properties/personsList/items/anyOf/0/properties/court",
+                                                                "type": "string",
+                                                                "title": "Назва суду"
+                                                            },
+                                                            "date": {
+                                                                "$id": "#items/anyOf/0/properties/personsList/items/anyOf/0/properties/date",
+                                                                "type": "string",
+                                                                "title": "Дата засідання"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                          },
+                                          "percent": {
+                                              "$id": "#items/anyOf/0/properties/percent",
+                                              "type": "number",
+                                              "title": "Відсоток співпадіння",
+                                              "description": "Відсоток співпадіння за ПІБ"
+                                          },
+                                          "level": {
+                                              "$id": "#items/anyOf/0/properties/level",
+                                              "type": "string",
+                                              "title": "Рівень співпадіння в реєстрі",
+                                              "description": "Рівень співпадіння в реєстрі Поле level може приймати два значення «Низький» і «Високий». Високий рівень співпадіння можливий лише у випадку виконання двох умов: Для юридичних осіб: значення вхідного параметру ipn (ЄДРПОУ) співпадає із значенням вихідного параметру ipn. Всі решта варіанти відповіді будуть мати «Низький» рівень співпадіння."
+                                          }
+                                      }
+                                  }
+                              ]
+                        }
+                      
                     },
                     "licenses": {
                         "$id": "#/properties/result/properties/licenses",
@@ -948,7 +1110,124 @@
                         "type": [
                             "array",
                             "string"
-                        ]
+                        ],
+                        "items": {
+                              "$id": "#items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#items/anyOf/0",
+                                      "type": "object",
+                                      "properties": {
+                                          "id": {
+                                              "$id": "#items/anyOf/0/properties/id",
+                                              "type": "number",
+                                              "title": "Ідентифікатор",
+                                              "description": "Ідентифікатор в реєстрі"
+                                          },
+                                          "name": {
+                                              "$id": "#items/anyOf/0/properties/name",
+                                              "type": "string",
+                                              "title": "ПІБ особи",
+                                              "description": "ПІБ особи"
+                                          },
+                                          "rank": {
+                                              "$id": "#items/anyOf/0/properties/rank",
+                                              "type": "string",
+                                              "title": "Звання",
+                                              "description": "Звання"
+                                          },
+                                          "birth": {
+                                              "$id": "#items/anyOf/0/properties/birth",
+                                              "type": "string",
+                                              "title": "Дата народження",
+                                              "description": "Дата народження"
+                                          },
+                                          "passport": {
+                                              "$id": "#items/anyOf/0/properties/passport",
+                                              "type": "string",
+                                              "title": "Паспортні дані",
+                                              "description": "Паспортні дані"
+                                          },
+                                          "basenumber": {
+                                              "$id": "#items/anyOf/0/properties/basenumber",
+                                              "type": "string",
+                                              "title": "Номер військової частини",
+                                              "description": "Номер військової частини"
+                                          },
+                                          "base": {
+                                              "$id": "#items/anyOf/0/properties/base",
+                                              "type": "string",
+                                              "title": "Назва військової частини",
+                                              "description": "Назва військової частини"
+                                          },
+                                          "info": {
+                                              "$id": "#items/anyOf/0/properties/info",
+                                              "type": "string",
+                                              "title": "Додаткова інформація",
+                                              "description": "Додаткова інформація"
+                                          },
+                                          "locatedinua": {
+                                              "$id": "#items/anyOf/0/properties/locatedinua",
+                                              "type": "boolean",
+                                              "title": "Присутність в Україні",
+                                              "description": "Присутність в Україні"
+                                          },
+                                          "is_good": {
+                                              "$id": "#items/anyOf/0/properties/is_good",
+                                              "type": "boolean",
+                                              "title": "Загиблий",
+                                              "description": "Загиблий"
+                                          },
+                                          "is_polon": {
+                                              "$id": "#items/anyOf/0/properties/is_polon",
+                                              "type": "boolean",
+                                              "title": "Полонений",
+                                              "description": "Полонений"
+                                          },
+                                          "is_identified": {
+                                              "$id": "#items/anyOf/0/properties/is_identified",
+                                              "type": "boolean",
+                                              "title": "Ідентифікований",
+                                              "description": "Ідентифікований"
+                                          },
+                                          "is_accused": {
+                                              "$id": "#items/anyOf/0/properties/is_accused",
+                                              "type": "boolean",
+                                              "title": "Обвинувачений",
+                                              "description": "Обвинувачений"
+                                          },
+                                          "foto": {
+                                              "$id": "#items/anyOf/0/properties/foto",
+                                              "type": "string",
+                                              "title": "Посилання на фото",
+                                              "description": "Посилання на фото"
+                                          },
+                                          "address": {
+                                              "$id": "#items/anyOf/0/properties/address",
+                                              "type": "string",
+                                              "title": "Адреса"
+                                          },
+                                          "link": {
+                                              "$id": "#items/anyOf/0/properties/link",
+                                              "type": "string",
+                                              "title": "Посилання"
+                                          },
+                                          "percent": {
+                                              "$id": "#items/anyOf/0/properties/percent",
+                                              "type": "number",
+                                              "title": "Відсоток співпадіння",
+                                              "description": "Відсоток співпадіння за ПІБ"
+                                          },
+                                          "level": {
+                                              "$id": "#items/anyOf/0/properties/level",
+                                              "type": "string",
+                                              "title": "Рівень співпадіння в реєстрі",
+                                              "description": "Рівень співпадіння в реєстрі Окупанти. Поле level може приймати два значення Низький і Високий. Високий рівень співпадіння можливий лише у випадку 100% співпадіння ПІБ і дати народження. Всі решта варіанти відповіді будуть мати Низький рівень співпадіння."
+                                          }
+                                      }
+                                  }
+                              ]
+                        }                      
                     },
                     "zrada": {
                         "$id": "#/properties/result/properties/zrada",
@@ -957,7 +1236,74 @@
                         "type": [
                             "array",
                             "string"
-                        ]
+                        ],
+                        "items": {
+                              "$id": "#items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#items/anyOf/0",
+                                      "type": "object",
+                                      "properties": {
+                                          "id": {
+                                              "$id": "#items/anyOf/0/properties/id",
+                                              "type": "string",
+                                              "title": "Ідентифікатор в реєстрі"
+                                          },
+                                          "name": {
+                                              "$id": "#items/anyOf/0/properties/name",
+                                              "type": "string",
+                                              "title": "ПІБ особи"
+                                          },
+                                          "birth": {
+                                              "$id": "#items/anyOf/0/properties/birth",
+                                              "type": "string",
+                                              "title": "Рік народження"
+                                          },
+                                          "position": {
+                                              "$id": "#items/anyOf/0/properties/position",
+                                              "type": "string",
+                                              "title": "Посада"
+                                          },
+                                          "reason": {
+                                              "$id": "#items/anyOf/0/properties/reason",
+                                              "type": "string",
+                                              "title": "Причина",
+                                              "description": "Причина по якій дана особа була додана в реєстр"
+                                          },
+                                          "foto": {
+                                              "$id": "#items/anyOf/0/properties/foto",
+                                              "type": "string",
+                                              "title": "Фото",
+                                              "description": "Посилання на фото"
+                                          },
+                                          "url": {
+                                              "$id": "#items/anyOf/0/properties/url",
+                                              "type": "string",
+                                              "title": "Посилання",
+                                              "description": "Посилання на сторінку реєстра"
+                                          },
+                                          "source": {
+                                              "$id": "#items/anyOf/0/properties/source",
+                                              "type": "string",
+                                              "title": "Джерело",
+                                              "description": "Посилання на джерело підтвердження факту зради"
+                                          },
+                                          "percent": {
+                                              "$id": "#items/anyOf/0/properties/percent",
+                                              "type": "number",
+                                              "title": "Відсоток збігу",
+                                              "description": "Відсоток збігу по ПІБ"
+                                          },
+                                          "level": {
+                                              "$id": "#items/anyOf/0/properties/level",
+                                              "type": "string",
+                                              "title": "Рівень співпадіння",
+                                              "description": "Рівень співпадіння в реєстрі Зрадники. Поле level може приймати два значення Низький і Високий. Високий рівень співпадіння можливий лише у випадку 100% співпадіння ПІБ і дати народження. Всі решта варіанти відповіді будуть мати Низький рівень співпадіння."
+                                          }
+                                      }
+                                  }
+                              ]
+                        }                      
                     },
                     "nonrezedent": {
                         "$id": "#/properties/result/properties/nonrezedent",
