@@ -306,8 +306,7 @@
                         "type": [
                             "array",
                             "string"
-                        ],
-                        "$ref": "./schemas/pep.json"
+                        ]
                     },
                     "psanctions": {
                         "$id": "#/properties/result/properties/psanctions",
