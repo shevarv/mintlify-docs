@@ -1083,7 +1083,109 @@
                         "type": [
                             "array",
                             "string"
-                        ]
+                        ],
+                        "items": {
+                              "$id": "#items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#items/anyOf/0",
+                                      "type": "object",
+                                      "properties": {
+                                          "order_vp": {
+                                              "$id": "#items/anyOf/0/properties/order_vp",
+                                              "type": "integer",
+                                              "title": "Номер провадження",
+                                              "description": "Номер провадження"
+                                          },
+                                          "devtor_edrpou": {
+                                              "$id": "#items/anyOf/0/properties/devtor_edrpou",
+                                              "type": "string",
+                                              "title": "Код ЄДРПОУ дебетора",
+                                              "description": "Код ЄДРПОУ дебетора"
+                                          },
+                                          "debtor_name": {
+                                              "$id": "#items/anyOf/0/properties/debtor_name",
+                                              "type": "string",
+                                              "title": "Назва дебетора",
+                                              "description": "Назва дебетора"
+                                          },
+                                          "debtor_birtdate": {
+                                              "$id": "#items/anyOf/0/properties/debtor_birtdate",
+                                              "type": "string",
+                                              "title": "Дата народження дебетора"
+                                          },
+                                          "creditor_edrpou": {
+                                              "$id": "#items/anyOf/0/properties/creditor_edrpou",
+                                              "type": "string",
+                                              "title": "Код ЄДРПОУ кредитора",
+                                              "description": "Код ЄДРПОУ кредитора"
+                                          },
+                                          "creditor_name": {
+                                              "$id": "#items/anyOf/0/properties/creditor_name",
+                                              "type": "string",
+                                              "title": "Назва кредитора",
+                                              "description": "Назва кредитора"
+                                          },
+                                          "begindate_vp": {
+                                              "$id": "#items/anyOf/0/properties/begindate_vp",
+                                              "type": "string",
+                                              "title": "Дата відкриття провадження",
+                                              "description": "Дата відкриття провадження"
+                                          },
+                                          "state_vp": {
+                                              "$id": "#items/anyOf/0/properties/state_vp",
+                                              "type": "string",
+                                              "title": "Стан провадження",
+                                              "description": "Стан провадження"
+                                          },
+                                          "depname": {
+                                              "$id": "#items/anyOf/0/properties/depname",
+                                              "type": "string",
+                                              "title": "Назва виконавчої служби",
+                                              "description": "Назва виконавчої служби"
+                                          },
+                                          "typecl": {
+                                              "$id": "#items/anyOf/0/properties/typecl",
+                                              "type": "string",
+                                              "title": "Статус",
+                                              "description": "Статус"
+                                          },
+                                          "dvs": {
+                                              "$id": "#items/anyOf/0/properties/dvs",
+                                              "type": "string",
+                                              "title": "ДВС"
+                                          },
+                                          "phone_num": {
+                                              "$id": "#items/anyOf/0/properties/phone_num",
+                                              "type": "string",
+                                              "title": "Номер телефону ДВС"
+                                          },
+                                          "email": {
+                                              "$id": "#items/anyOf/0/properties/email",
+                                              "type": "string",
+                                              "title": "Email ДВС"
+                                          },
+                                          "bank_account": {
+                                              "$id": "#items/anyOf/0/properties/bank_account",
+                                              "type": "string",
+                                              "title": "Банківський рахунок"
+                                          },
+                                          "percent": {
+                                              "$id": "#items/anyOf/0/properties/percent",
+                                              "type": "number",
+                                              "title": "Відсоток співпадіння",
+                                              "description": "Відсоток співпадіння за ПІБ"
+                                          },
+                                          "level": {
+                                              "$id": "#items/anyOf/0/properties/level",
+                                              "type": "string",
+                                              "title": "Рівень співпадіння в реєстрі",
+                                              "description": "Рівень співпадіння в реєстрі Поле level може приймати два значення «Низький» і «Високий». Високий рівень співпадіння можливий лише у випадку виконання двох умов: Для юридичних осіб: значення вхідного параметру ipn (ЄДРПОУ) співпадає із значенням вихідного параметру ipn. Для фізичних осіб: 100% співпадіння ПІБ і дати народження. Всі решта варіанти відповіді будуть мати «Низький» рівень співпадіння."
+                                          }
+                                      }
+                                  }
+                              ]
+                        }                      
                     },
                     "taxdebtor": {
                         "$id": "#/properties/result/properties/taxdebtor",
