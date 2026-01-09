@@ -414,7 +414,208 @@
                         "type": [
                             "array",
                             "string"
-                        ]
+                        ],
+                        "items": {
+                              "$id": "#items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#items/anyOf/0",
+                                      "type": "object",
+                                      "properties": {
+                                          "edrchangesfrom": {
+                                              "$id": "#items/anyOf/0/properties/edrchangesfrom",
+                                              "type": "string",
+                                              "title": "Дата початку",
+                                              "description": "Дата початку періоду, що перевірявся"
+                                          },
+                                          "edrchangesto": {
+                                              "$id": "#items/anyOf/0/properties/edrchangesto",
+                                              "type": "string",
+                                              "title": "Дата закінчення",
+                                              "description": "Дата закінчення періоду, що перевірявся"
+                                          },
+                                          "edrchanges": {
+                                              "$id": "#items/anyOf/0/properties/edrchanges",
+                                              "type": "array",
+                                              "title": "Масив даних Зміни в ЄДР по конкретному коду ЄДРПОУ",
+                                              "description": "Масив даних Зміни в ЄДР по конкретному коду ЄДРПОУ",
+                                              "items": {
+                                                  "$id": "#items/anyOf/0/properties/edrchanges/items",
+                                                  "anyOf": [
+                                                      {
+                                                          "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0",
+                                                          "type": "object",
+                                                          "properties": {
+                                                              "edrpou": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/edrpou",
+                                                                  "type": "string",
+                                                                  "title": "ЄДРПОУ",
+                                                                  "description": "Код ЄДРПОУ юридичної особи"
+                                                              },
+                                                              "lastname": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/lastname",
+                                                                  "type": "string",
+                                                                  "title": "Актуальна повна назва",
+                                                                  "description": "Актуальна повна назва юридичної особи"
+                                                              },
+                                                              "lastsname": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/lastsname",
+                                                                  "type": "string",
+                                                                  "title": "Актуальна скорочена назва",
+                                                                  "description": "Актуальна скорочена назва юридичної особи"
+                                                              },
+                                                              "lastaddress": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/lastaddress",
+                                                                  "type": "string",
+                                                                  "title": "Актуальна адреса",
+                                                                  "description": "Актуальна адреса реєстрації юридичної особи"
+                                                              },
+                                                              "laststate": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/laststate",
+                                                                  "type": "string",
+                                                                  "title": "Актуальний статус",
+                                                                  "description": "Актуальний статус юридичної особи"
+                                                              },
+                                                              "n_name": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/n_name",
+                                                                  "type": "string",
+                                                                  "title": "Зміна назви (ОПФ)",
+                                                                  "description": "Кількість змін назви (ОПФ) за період, що перевіряється"
+                                                              },
+                                                              "n_address": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/n_address",
+                                                                  "type": "string",
+                                                                  "title": "Зміна адреси реєстрації",
+                                                                  "description": "Кількість змін адреси реєстрації за період, що перевіряється"
+                                                              },
+                                                              "n_manag": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/n_manag",
+                                                                  "type": "string",
+                                                                  "title": "Зміна керівника",
+                                                                  "description": "Кількість змін керівника за період, що перевіряється"
+                                                              },
+                                                              "n_kved": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/n_kved",
+                                                                  "type": "string",
+                                                                  "title": "Зміна основного КВЕДу",
+                                                                  "description": "Кількість змін основного КВЕДу за період, що перевіряється"
+                                                              },
+                                                              "n_state": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/n_state",
+                                                                  "type": "string",
+                                                                  "title": "Зміна статусу",
+                                                                  "description": "Кількість змін статусу за період, що перевіряється"
+                                                              },
+                                                              "n_kbv": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/n_kbv",
+                                                                  "type": "string",
+                                                                  "title": "Зміна інформації про КБВ",
+                                                                  "description": "Кількість змін інформації про КБВ за період, що перевіряється"
+                                                              },
+                                                              "n_kbv_human": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/n_kbv_human",
+                                                                  "type": "string",
+                                                                  "title": "Зміна КБВ",
+                                                                  "description": "Кількість змін КБВ за період, що перевіряється"
+                                                              },
+                                                              "n_founder": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/n_founder",
+                                                                  "type": "string",
+                                                                  "title": "Зміна інформації про засновників/учасників",
+                                                                  "description": "Кількість змін інформації про засновників/учасників за період, що перевіряється"
+                                                              },
+                                                              "n_founder_human": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/n_founder_human",
+                                                                  "type": "string",
+                                                                  "title": "Зміна засновників/учасників",
+                                                                  "description": "Кількість змін засновників/учасників за період, що перевіряється"
+                                                              },
+                                                              "changes": {
+                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes",
+                                                                  "type": "array",
+                                                                  "title": "Масив даних Деталізація змін",
+                                                                  "description": "Масив даних Деталізація змін",
+                                                                  "items": {
+                                                                      "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items",
+                                                                      "anyOf": [
+                                                                          {
+                                                                              "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0",
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                  "datachange": {
+                                                                                      "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/datachange",
+                                                                                      "type": "string",
+                                                                                      "title": "Дата зміни",
+                                                                                      "description": "Дата змін в юридичній особі"
+                                                                                  },
+                                                                                  "changedetails": {
+                                                                                      "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/changedetails",
+                                                                                      "type": "array",
+                                                                                      "title": "Масив змін в юридичній особі за дату",
+                                                                                      "description": "Масив змін в юридичній особі за дату",
+                                                                                      "items": {
+                                                                                          "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/changedetails/items",
+                                                                                          "anyOf": [
+                                                                                              {
+                                                                                                  "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/changedetails/items/anyOf/0",
+                                                                                                  "type": "object",
+                                                                                                  "properties": {
+                                                                                                      "id": {
+                                                                                                          "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/changedetails/items/anyOf/0/properties/id",
+                                                                                                          "type": "string",
+                                                                                                          "title": "Ідентифікатор зміни",
+                                                                                                          "description": "Ідентифікатор зміни"
+                                                                                                      },
+                                                                                                      "changeinf": {
+                                                                                                          "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/changedetails/items/anyOf/0/properties/changeinf",
+                                                                                                          "type": "string",
+                                                                                                          "title": "Тип зміни",
+                                                                                                          "description": "Інформація про зміну. Може приймати наступні значення:000. Юридична особа за таким кодом ЄДРПОУ не знайдена!; 010. зміна органіційно-правової форми або назви; 011. зміна скор. назви; 020. зміна адреси; 030. зміна керівника; 040. зміна основного виду діяльності; 050. зміна стану ЮО; 060. зміна кінцевого бенефіціарного власника (контролера) КБВ; 070. зміна засновника (учасника)"
+                                                                                                      },
+                                                                                                      "changetype": {
+                                                                                                          "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/changedetails/items/anyOf/0/properties/changetype",
+                                                                                                          "type": "number",
+                                                                                                          "title": "Тип зміни",
+                                                                                                          "description": "Тип зміни"
+                                                                                                      },
+                                                                                                      "ishumanchanges": {
+                                                                                                          "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/changedetails/items/anyOf/0/properties/ishumanchanges",
+                                                                                                          "type": "boolean",
+                                                                                                          "title": "Індикатор зміни особи керівника, КБВ, учасника",
+                                                                                                          "description": "Індикатор зміни особи керівника, КБВ, учасника"
+                                                                                                      },
+                                                                                                      "oldv": {
+                                                                                                          "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/changedetails/items/anyOf/0/properties/oldv",
+                                                                                                          "type": "string",
+                                                                                                          "title": "Попереднє значення",
+                                                                                                          "description": "Попереднє значення парметру"
+                                                                                                      },
+                                                                                                      "newv": {
+                                                                                                          "$id": "#items/anyOf/0/properties/edrchanges/items/anyOf/0/properties/changes/items/anyOf/0/properties/changedetails/items/anyOf/0/properties/newv",
+                                                                                                          "type": "string",
+                                                                                                          "title": "Нове значення",
+                                                                                                          "description": "Нове значення параметру"
+                                                                                                      }
+                                                                                                  }
+                                                                                              }
+                                                                                          ]
+                                                                                      }
+                                                                                  }
+                                                                              }
+                                                                          }
+                                                                      ]
+                                                                  }
+                                                              }
+                                                          }
+                                                      }
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  }
+                              ]
+                        }
+                      
                     },
                     "justice": {
                         "$id": "#/properties/result/properties/justice",
