@@ -1,140 +1,127 @@
 {
-  "openapi": "3.0.2",
+  "openapi": "3.1.0",
   "info": {
-    "title": "Swagger Check List",
-    "description": "Це приклад надсилання АПІ запитів до реєстрів Check List",
+    "title": "OpenAPI Plant Store",
+    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
     "license": {
-      "name": "Proprietary"
+      "name": "MIT"
     },
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "https://finap.com.ua:9443"
+      "url": "http://sandbox.mintlify.com"
     }
   ],
   "security": [
     {
       "bearerAuth": []
     }
-  ],  
+  ],
   "paths": {
-    "/api": {
+    "/plants": {
       "get": {
-        "summary": "",
-        "description": "Публічні особи",
-        "operationId": "getPep",
+        "description": "Returns all plants from the system that the user has access to",
         "parameters": [
           {
-            "name": "tokken",
+            "name": "limit",
             "in": "query",
-            "description": "Токен",
-            "required": true,
-            "style": "simple",
-            "explode": false,
+            "description": "The maximum number of results to return",
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "IDsubjectFM",
-            "in": "query",
-            "description": "ID",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "description": "Ім'я кирилецею",
-            "required": false,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "namelat",
-            "in": "query",
-            "description": "Ім'я латинецею",
-            "required": false,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "ipn",
-            "in": "query",
-            "description": "Інн",
-            "required": false,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "date",
-            "in": "query",
-            "description": "Дата",
-            "required": false,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "default": " "
-            }
-          },
-          {
-            "name": "search",
-            "in": "query",
-            "description": "Приймає значення (1 - 2)",
-            "required": false,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "number",
-              "default": 1
-            }
-          },
-          {
-            "name": "lowranklimit",
-            "in": "query",
-            "description": "Приймає значення від 0 до 100",
-            "required": false,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "number",
-              "default": 0
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
         "responses": {
-          "200": { "description": "Успішна відповідь" },
-          "4xx": {
-            "description": "HTTP-статус з кодом в діапазоні 400-499 - сервіс CheckLists доступний, проте не може опрацювати ваш запит",
+          "200": {
+            "description": "Plant response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/pep400"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Plant"
+                  }
                 }
               }
             }
           },
-          "5xx": {
-            "description": "HTTP-статус з кодом в діапазоні 500-599 - сервіс CheckLists недоступний, або працює некоректно",
+          "400": {
+            "description": "Unexpected error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/pep500"
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new plant in the store",
+        "requestBody": {
+          "description": "Plant to add to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPlant"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "plant response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plant"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/plants/{id}": {
+      "delete": {
+        "description": "Deletes a single plant based on the ID supplied",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of plant to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Plant deleted",
+            "content": {}
+          },
+          "400": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -143,45 +130,87 @@
       }
     }
   },
+  "webhooks": {
+    "/plant/webhook": {
+      "post": {
+        "description": "Information about a new plant added to the store",
+        "requestBody": {
+          "description": "Plant added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPlant"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        }
+      }
+    }
+  },
   "components": {
     "schemas": {
-      "pep400": {
-        "example": {
-          "idinternal": "",
-          "idsubjectFM": "finap_test",
-          "iduserPC": "",
-          "idrequest": "16440497",
-          "dateResponse": "2023-11-22T12:00:22.238",
-          "listdata": "7680",
-          "search": "1",
-          "responsetype": "5",
-          "textformat": "",
-          "result": {
-            "peps": {
-              "error1": "9001.Доступ до сервісу заборонений - Доступ до пошукового реєстру заборонений, так як він не входить в пакет послуг, які ви оплатили",
-              "error3": "9003.Обробка запиту перевищує виділений для цього час. Уточніть запит – виникає коли обробка запиту до пошукового реєстру перевищує виділений для цього час",
-              "error4": "9004.Відсутній зв'язок з базою даних сервісу - виникає коли сервіс, який обслуговує реєстр, доступний, проте відсутній зв'язок з базою даних реєстру"
-            }
+      "Plant": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the plant",
+            "type": "string"
+          },
+          "tag": {
+            "description": "Tag to specify the type",
+            "type": "string"
           }
         }
       },
-      "pep500": {
-        "example": {
-          "idinternal": "",
-          "idsubjectFM": "finap_test",
-          "iduserPC": "",
-          "idrequest": "16440497",
-          "dateResponse": "2023-11-22T12:00:22.238",
-          "listdata": "7680",
-          "search": "1",
-          "responsetype": "5",
-          "textformat": "",
-          "result": {
-            "peps": {
-              "error": "9000.Відсутній зв'язок з сервісом – Пошуковий реєстр не працює або сервіс немає зв’язку з ним"
+      "NewPlant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Plant"
+          },
+          {
+            "required": [
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "Identification number of the plant",
+                "type": "integer",
+                "format": "int64"
+              }
             }
           }
+        ]
+      },
+      "Error": {
+        "required": [
+          "error",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
         }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
   }
