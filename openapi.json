@@ -22,6 +22,7 @@
   "paths": {
     "/api": {
       "get": {
+        "summary": "CheckLists",
         "description": "Повертає результат з реєстрів CheckLists",
         "parameters": [
           {
@@ -107,7 +108,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json"
+                    "$ref": "https://check.finap.com.ua/apiinfo/schema/v1/zrada.json"
                   }
                 }
               }
