@@ -19,36 +19,94 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/api": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "Повертає результат з реєстрів CheckLists",
         "parameters": [
           {
-            "name": "limit",
+            "name": "tokken",
             "in": "query",
-            "description": "The maximum number of results to return",
+            "description": "Токен",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
+            }
+          },
+          {
+            "name": "IDsubjectFM",
+            "in": "query",
+            "description": "ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Ім'я кирилецею",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "namelat",
+            "in": "query",
+            "description": "Ім'я латинецею",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipn",
+            "in": "query",
+            "description": "Інн",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Дата",
+            "schema": {
+              "type": "string",
+              "default": " "
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Приймає значення (1 - 2)",
+            "schema": {
+              "type": "number",
+              "default": 1
+            }
+          },
+          {
+            "name": "lowranklimit",
+            "in": "query",
+            "description": "Приймає значення від 0 до 100",
+            "schema": {
+              "type": "number",
+              "default": 0
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "Успішна відповідь",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Success"
                   }
                 }
               }
             }
           },
           "400": {
-            "description": "Unexpected error",
+            "description": "Помилка",
             "content": {
               "application/json": {
                 "schema": {
@@ -60,13 +118,12 @@
         }
       },
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "Повертає результат з реєстрів CheckLists",
         "requestBody": {
-          "description": "Plant to add to the store",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+                "$ref": "#/components/schemas/Success"
               }
             }
           },
@@ -74,50 +131,17 @@
         },
         "responses": {
           "200": {
-            "description": "plant response",
+            "description": "Успішна відповідь",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Plant"
+                  "$ref": "#/components/schemas/Success"
                 }
               }
             }
           },
           "400": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/plants/{id}": {
-      "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of plant to delete",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Plant deleted",
-            "content": {}
-          },
-          "400": {
-            "description": "unexpected error",
+            "description": "Помилка",
             "content": {
               "application/json": {
                 "schema": {
@@ -154,7 +178,7 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
+      "Success": {
         "required": [
           "name"
         ],
@@ -169,26 +193,6 @@
             "type": "string"
           }
         }
-      },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
       },
       "Error": {
         "required": [
