@@ -121,7 +121,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "response.json"
+                    "$ref": "./response.json"
                   }
                 }
               }
