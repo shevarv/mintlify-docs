@@ -112,6 +112,7 @@
               "uk/check-lists/vkhidni-parametri-copied-2",
               {
                 "group": "REST API",
+                "openapi": "openapi_pl.json",
                 "pages": [
                   "peps-copied-2",
                   "psanction-copied-2",
