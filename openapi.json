@@ -107,7 +107,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Success"
+                    "$ref": "https://check.finap.com.ua/apiinfo/schema/v1/ResponseSchema.json"
                   }
                 }
               }
