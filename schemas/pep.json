@@ -1,533 +1,61 @@
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://check.finap.com.ua/apiinfo/schema/v1/pep.json",
-    "title": "Публічно значущі особи",
-    "description": "Схема відповіді з реєстру 'Публічні особи'",
-    "items": {
-        "$id": "#items",
-        "anyOf": [
-            {
-                "$id": "#items/anyOf/0",
-                "type": "object",
-                "properties": {
-                    "list": {
-                        "$id": "#items/anyOf/0/properties/list",
-                        "type": "string",
-                        "title": "Назва пошукового реєстру ('pep')",
-                        "description": "Назва пошукового реєстру ('pep')"
-                    },
-                    "idpep": {
-                        "$id": "#items/anyOf/0/properties/idpep",
-                        "type": "number",
-                        "title": "Ідентифікатор публічної особи (близької, пов'язаної) в реєстрі",
-                        "description": "Ідентифікатор публічної особи (близької, пов'язаної) в рестрі"
-                    },
-                    "active": {
-                        "$id": "#items/anyOf/0/properties/active",
-                        "type": "boolean",
-                        "title": "Індикатор активності статусу особи"
-                    },
-                    "name": {
-                        "$id": "#items/anyOf/0/properties/name",
-                        "type": "string",
-                        "title": "ПІБ (назва) публічної особи (близької, пов'язаної)",
-                        "description": "ПІБ (назва) публічної особи (близької, пов'язаної)"
-                    },
-                    "aka": {
-                        "$id": "#items/anyOf/0/properties/aka",
-                        "type": "string",
-                        "title": "Альтернативні ПІБ (назви) публічної особи (близької, пов'язаної)",
-                        "description": "Альтернативні ПІБ (назва) публічної особи (близької, пов'язаної)"
-                    },
-                    "type": {
-                        "$id": "#items/anyOf/0/properties/type",
-                        "type": "number",
-                        "title": "Тип особи",
-                        "description": "Тип особи (0 – фізична, 1 - юридична)"
-                    },
-                    "dateb": {
-                        "$id": "#items/anyOf/0/properties/dateb",
-                        "type": "string",
-                        "title": "Дата народження",
-                        "description": "Дата народження публічної особи (близької, пов'язаної)"
-                    },
-                    "yearb": {
-                        "$id": "#items/anyOf/0/properties/yearb",
-                        "type": "string",
-                        "title": "Рік народження",
-                        "description": "Рік народження публічної особи (близької, пов'язаної) в разі відсутності інформації про дату народження"
-                    },
-                    "dateendpep": {
-                        "$id": "#items/anyOf/0/properties/dateendpep",
-                        "type": "string",
-                        "title": "Дата припинення",
-                        "description": "Дата припинення у особи статусу «Публічна»"
-                    },
-                    "pependcomment": {
-                        "$id": "#items/anyOf/0/properties/pependcomment",
-                        "type": "string",
-                        "title": "Коментар",
-                        "description": "Коментар щодо припинення у особи статусу «Публічна»"
-                    },
-
-                    "job": {
-                        "$id": "#items/anyOf/0/properties/job",
-                        "type": "string",
-                        "title": "Посада",
-                        "description": "Посада публічної особи (близької, пов'язаної)"
-                    },
-                    "region": {
-                        "$id": "#items/anyOf/0/properties/region",
-                        "type": "string",
-                        "title": "Регіон діяльності",
-                        "description": "Регіон діяльності публічної особи (близької, пов'язаної)"
-                    },
-                    "country": {
-                        "$id": "#items/anyOf/0/properties/country",
-                        "type": "object",
-                        "title": "Блок інформації про ризиковість країни",
-                        "$ref": "https://check.finap.com.ua/apiinfo/schema/v1/country.json"
-                    },
-                    "ipn": {
-                        "$id": "#items/anyOf/0/properties/ipn",
-                        "type": "string",
-                        "title": "ЄДРПОУ пов'язаної особи",
-                        "description": "ЄДРПОУ пов'язаної особи"
-                    },
-                    "photo": {
-                        "$id": "#items/anyOf/0/properties/photo",
-                        "type": "string",
-                        "title": "Фото",
-                        "description": "Посилання на фото публічної особи (близької, пов'язаної)"
-                    },
-                    "categoryPEP": {
-                        "$id": "#items/anyOf/0/properties/categoryPEP",
-                        "type": "string",
-                        "title": "Категорії публічності",
-                        "description": "Категорії, до яких відноситься публічної особи (близької, пов'язаної) згідно довідника НБУ K019"
-                    },
-                    "typePEP": {
-                        "$id": "#items/anyOf/0/properties/typePEP",
-                        "type": "number",
-                        "title": "Цифрове значення загальної категорії публічної особи (близької, пов'язаної)",
-                        "description": "Цифрове значення загальної категорії публічної особи (близької, пов'язаної) (0 - публічні діячі - фізичні особи, які виконують визначні публічні функції, 1-БЛИЗЬКА ОСОБА,2-ПОВ’ЯЗАНА ОСОБА, 3 - публічні діячі - фізичні особи, які виконували визначні публічні функції)"
-                    },
-                    "descriptiontypePEP": {
-                        "$id": "#items/anyOf/0/properties/descriptiontypePEP",
-                        "type": "string",
-                        "title": "Цифрові значення категорій, до яких відноситься публічна особа (близька, пов'язана) згідно довідника НБУ K019",
-                        "description": "Цифрові значення категорій, до яких відноситься публічна особа (близька, пов'язана) згідно довідника НБУ K019"
-                    },
-                    "foreign_relation": {
-                        "$id": "#items/anyOf/0/properties/foreign_relation",
-                        "type": "boolean",
-                        "title": "Зв'язок з іноземними PEPs"
-                    },
-                    "percent": {
-                        "$id": "#items/anyOf/0/properties/percent",
-                        "type": "number",
-                        "title": "Відсоток співпадіння",
-                        "description": "Відсоток співпадіння за ПІБ"
-                    },
-                    "level": {
-                        "$id": "#items/anyOf/0/properties/level",
-                        "type": "string",
-                        "title": "Рівень співпадіння в реєстрі",
-                        "description": "Поле level може приймати два значення «Низький» і «Високий». Високий рівень співпадіння можливий лише у випадку виконання двох умов: Для юридичних осіб: значення вхідного параметру ipn (ЄДРПОУ) співпадає із значенням вихідного параметру ipn. Для фізичних осіб: Значення вхідного параметру name (ПІБ клієнта) або namelat (транслітерація ПІБ клієнта згідно українського законодавства) повністю співпадають з ПІБ клієнта (поле name відповіді) або присутнє в переліку альтернативних імен (поле aka) в повному вигляді та у вхідному запиті повинен бути присутнім  додатковий параметрів (дата народження (вхідний параметр date) і значення цього параметру відповідає значенню поля відповіді dateb. Всі решта варіанти відповіді будуть мати «Низький» рівень співпадіння."
-                    },
-                    "sources": {
-                        "$id": "#items/anyOf/0/properties/sources",
-                        "type": "array",
-                        "title": "Масив даних про джерела інформації по особі",
-                        "description": "Дані по джерела інформації по особі",
                         "items": {
-                            "$id": "#items/anyOf/0/properties/sources/items",
-                            "anyOf": [
-                                {
-                                    "$id": "#items/anyOf/0/properties/sources/items/anyOf/0",
-                                    "type": "object",
-                                    "properties": {
-                                        "site": {
-                                            "$id": "#items/anyOf/0/properties/sources/items/anyOf/0/properties/site",
-                                            "type": "string",
-                                            "title": "Посилання на офіційне джерело",
-                                            "description": "Посилання на офіційне джерело"
-                                        },
-                                        "pdf": {
-                                            "$id": "#items/anyOf/0/properties/sources/items/anyOf/0/properties/pdf",
-                                            "type": "string",
-                                            "title": "Посилання на файл pdf на сайті FinAP",
-                                            "description": "Посилання на файл pdf на сайті FinAP. У разі недоступності джерела за посиланням, даний файл може слугувати підтвердженням"
-                                        },
-                                        "brief": {
-                                            "$id": "#items/anyOf/0/properties/sources/items/anyOf/0/properties/brief",
-                                            "type": "string",
-                                            "title": "Опис посилання",
-                                            "description": "Опис посилання"
-                                        }
-                                    }
-                                }
-                            ]
+                             "$id": "#items",
+                             "anyOf": [
+                                 {
+                                     "$id": "#items/anyOf/0",
+                                     "type": "object",
+                                     "title": "The first anyOf schema",
+                                     "description": "An explanation about the purpose of this instance.",
+                                     "properties": {
+                                         "ovd": {
+                                             "$id": "#items/anyOf/0/properties/ovd",
+                                             "type": "string",
+                                             "title": "Підрозділ",
+                                             "description": "Підрозділ, яким було внесено інформацію до реєстру втрачених/викрадених документів"
+                                         },
+                                         "d_SERIES": {
+                                             "$id": "#items/anyOf/0/properties/d_SERIES",
+                                             "type": "string",
+                                             "title": "Серія",
+                                             "description": "Серія документа"
+                                         },
+                                         "d_NUMBER": {
+                                             "$id": "#items/anyOf/0/properties/d_NUMBER",
+                                             "type": "string",
+                                             "title": "Номер",
+                                             "description": "Номер документа."
+                                         },
+                                         "d_TYPE": {
+                                             "$id": "#items/anyOf/0/properties/d_TYPE",
+                                             "type": "string",
+                                             "title": "Тип",
+                                             "description": "Тип документа, можливі значення:ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ,ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ ДЛЯ ВИЇЗДУ ЗА КОРДОН,ПОСВІДЧЕННЯ ЧЛЕНА ЕКІПАЖУ"
+                                         },
+                                         "d_STATUS": {
+                                             "$id": "#items/anyOf/0/properties/d_STATUS",
+                                             "type": "string",
+                                             "title": "Статус",
+                                             "description": "Статус документа, можливі значення:ВИЗНАНО НЕДІЙСНИМ,ВИКРАДЕНИЙ,ВТРАЧЕНО,ПАСПОРТ ПОМЕРЛОГО НЕ ЗДАНИЙ ДО ДМС,ВИЛУЧЕНО З ОЗНАКАМИ ПІДРОБКИ,ВЛАСНИК ДОКУМЕНТА РОЗШУКУЄТЬСЯ,ВІДІЗВАНИЙ,НЕ ВИЛУЧЕНО У ЗААРЕШТОВАНОГО"
+                                         },
+                                         "theft_DATA": {
+                                             "$id": "#items/anyOf/0/properties/theft_DATA",
+                                             "type": "string",
+                                             "title": "Дата повідомлення",
+                                             "description": "Дата повідомлення про втрату/викрадення"
+                                         },
+                                         "insert_DATE": {
+                                             "$id": "#items/anyOf/0/properties/insert_DATE",
+                                             "type": "string",
+                                             "title": "Дата внесення до реєстру",
+                                             "description": "Дата внесення до реєстру втрачених документів"
+                                         },
+                                         "id": {
+                                             "$id": "#items/anyOf/0/properties/id",
+                                             "type": "string",
+                                             "title": "Ідентифікатор запису",
+                                             "description": "Ідентифікатор запису про втрачений документ"
+                                         }
+                                     }
+                                 }
+                             ]
                         }
-                    },
-                    "declarations": {
-                        "$id": "#items/anyOf/0/properties/declarations",
-                        "type": "array",
-                        "title": "Масив даних Декларації",
-                        "description": "Дані по деклараціях",
-                        "items": {
-                            "$id": "#items/anyOf/0/properties/declarations/items",
-                            "anyOf": [
-                                {
-                                    "$id": "#items/anyOf/0/properties/declarations/items/anyOf/0",
-                                    "type": "object",
-                                    "properties": {
-                                        "d_name": {
-                                            "$id": "#items/anyOf/0/properties/declarations/items/anyOf/0/properties/d_name",
-                                            "type": "string",
-                                            "title": "Тип декларації",
-                                            "description": "Тип декларації"
-                                        },
-                                        "d_year": {
-                                            "$id": "#items/anyOf/0/properties/declarations/items/anyOf/0/properties/d_year",
-                                            "type": "string",
-                                            "title": "Рік декларації",
-                                            "description": "Рік декларації"
-                                        },
-                                        "d_link": {
-                                            "$id": "#items/anyOf/0/properties/declarations/items/anyOf/0/properties/d_link",
-                                            "type": "string",
-                                            "title": "Лінк на декларацію на сайт НАЗК",
-                                            "description": "Лінк на декларацію на сайт НАЗК"
-                                        },
-                                        "d_pdf": {
-                                            "$id": "#items/anyOf/0/properties/declarations/items/anyOf/0/properties/d_pdf",
-                                            "type": "string",
-                                            "title": "Лінк на декларацію у форматі PDF на сайті FinAP",
-                                            "description": "Лінк на декларацію у форматі PDF на сайті FinAP. У разі недоступності джерела за посиланням, даний файл може слугувати підтвердженням"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "jobdetails": {
-                        "$id": "#items/anyOf/0/properties/jobdetails",
-                        "type": "array",
-                        "title": "Масив даних відомості про роботу",
-                        "description": "Масив даних відомості про роботу",
-                        "items": {
-                            "$id": "#items/anyOf/0/properties/jobdetails/items",
-                            "anyOf": [
-                                {
-                                    "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0",
-                                    "type": "object",
-                                    "properties": {
-                                        "jobplace": {
-                                            "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/jobplace",
-                                            "type": "string",
-                                            "title": "Найменування місця роботи",
-                                            "description": "Найменування місця роботи"
-                                        },
-                                        "jobbegin": {
-                                            "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/jobbegin",
-                                            "type": "string",
-                                            "title": "Дата початку роботи на посаді",
-                                            "description": "Дата початку роботи на посаді"
-                                        },
-                                        "jobend": {
-                                            "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/jobend",
-                                            "type": "string",
-                                            "title": "Дата завершення роботи на посаді",
-                                            "description": "Дата завершення роботи на посаді"
-                                        },
-                                        "jobpost": {
-                                            "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/jobpost",
-                                            "type": "string",
-                                            "title": "Найменування посади",
-                                            "description": "Найменування посади"
-                                        },
-                                        "jobedrpou": {
-                                            "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/jobedrpou",
-                                            "type": "string",
-                                            "title": "Код ЄДРПОУ місця роботи",
-                                            "description": "Код ЄДРПОУ місця роботи"
-                                        },
-		                        "jobcountry": {
-                		            "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/jobcountry",
-		                            "type": "object",
-                		            "title": "Блок інформації про ризиковість країни",
-		                            "$ref": "https://check.finap.com.ua/apiinfo/schema/v1/country.json"
-                		        },
-                                        "links": {
-                                            "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/links",
-                                            "type": "array",
-                                            "title": "Масив даних Посилання на джерела відомостей про роботу",
-                                            "description": "Масив даних Посилання на джерела відомостей про роботу",
-                                            "items": {
-                                                "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/links/items",
-                                                "anyOf": [
-                                                    {
-                                                        "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/links/items/anyOf/0",
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "site": {
-                                                                "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/links/items/anyOf/0/properties/site",
-                                                                "type": "string",
-                                                                "title": "Посилання на офіційне джерело",
-                                                                "description": "Посилання на офіційне джерело"
-                                                            },
-                                                            "pdf": {
-                                                                "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/links/items/anyOf/0/properties/pdf",
-                                                                "type": "string",
-                                                                "title": "Посилання на файл pdf на сайті FinAP",
-                                                                "description": "Посилання на файл pdf на сайті FinAP. У разі недоступності джерела за посиланням, даний файл може слугувати підтвердженням"
-                                                            },
-                                                            "brief": {
-                                                                "$id": "#items/anyOf/0/properties/jobdetails/items/anyOf/0/properties/links/items/anyOf/0/properties/brief",
-                                                                "type": "string",
-                                                                "title": "Опис посилання",
-                                                                "description": "Опис посилання"
-                                                            }
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "relatedPersons": {
-                        "$id": "#items/anyOf/0/properties/relatedPersons",
-                        "type": "array",
-                        "title": "Масив даних Пов'язані особи",
-                        "description": "Масив даних Пов'язані особи до даної публічної особи",
-                        "items": {
-                            "$id": "#items/anyOf/0/properties/relatedPersons/items",
-                            "anyOf": [
-                                {
-                                    "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0",
-                                    "type": "object",
-                                    "properties": {
-                                        "relateid": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relateid",
-                                            "type": "number",
-                                            "title": "Унікальний ідентифікатор особи в реєстрі",
-                                            "description": "Унікальний ідентифікатор особи в реєстрі"
-                                        },
-				        "active": {
-                          			"$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/active",
-			                        "type": "boolean",
-                        			"title": "Індикатор активності статусу особи"
-		                        },
-                                        "relatepib": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relatepib",
-                                            "type": "string",
-                                            "title": "Найменування/ПІБ пов'язаної особи",
-                                            "description": "Найменування/ПІБ пов'язаної особи"
-                                        },
-                                        "relateaka": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relateaka",
-                                            "type": "string",
-                                            "title": "Перелік альтернативного найменування/ПІБ пов'язаної особи",
-                                            "description": "Перелік альтернативного пов'язаної особи"
-                                        },
-                                        "relatetype": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relatetype",
-                                            "type": "number",
-                                            "title": "Тип особи"
-                                        },
-		                        "country": {
-                		            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/country",
-		                            "type": "object",
-                		            "title": "Блок інформації про ризиковість країни",
-		                            "$ref": "https://check.finap.com.ua/apiinfo/schema/v1/country.json"
-                		        },
-                                        "relatedatebith": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relatedatebith",
-                                            "type": "string",
-                                            "title": "Дата народження особи"
-                                        },
-                                        "relatebrief": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relatebrief",
-                                            "type": "string",
-                                            "title": "Тип пов'язання",
-                                            "description": "Тип пов'язання"
-                                        },
-                                        "relatebrief_id": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relatebrief_id",
-                                            "type": "number",
-                                            "title": "Ідентифікатор типу пов'язання"
-                                        },
-                                        "relatelink": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relatelink",
-                                            "type": "number",
-                                            "title": "Цифровий код зв'язку згідно довідника НБУ K019",
-                                            "description": "Цифровий код зв'язку згідно довідника НБУ K019"
-                                        },
-                                        "relatecod": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relatecod",
-                                            "type": "string",
-                                            "title": "Код ЄДРПОУ пов'язаної особи",
-                                            "description": "Код ЄДРПОУ пов'язаної особи"
-                                        },
-                                        "relateorg": {
-                                            "$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relateorg",
-                                            "type": "string",
-                                            "title": "Перелік ЄДРПОУ організацій (через які будується пов'язаність по КБВ при не прямому звязку)",
-                                            "description": "Перелік ЄДРПОУ організацій (через які будується пов'язаність по КБВ при не прямому звязку)"
-                                        },
-				        "archivelink": {
-                          			"$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/archivelink",
-			                        "type": "boolean",
-                        			"title": "Індикатор архівності зв'язку"
-		                        }
-
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "relatedPeps": {
-                        "$id": "#items/anyOf/0/properties/relatedPeps",
-                        "type": "array",
-                        "title": "Масив даних Пов'язаність з ПЕПами",
-                        "description": "Масив публічних осіб пов'язаних з даною особою",
-                        "items": {
-                            "$id": "#items/anyOf/0/properties/relatedPeps/items",
-                            "anyOf": [
-                                {
-                                    "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0",
-                                    "type": "object",
-                                    "properties": {
-                                        "idpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/idpep",
-                                            "type": "number",
-                                            "title": "Унікальний ідентифікатор особи в реєстрі",
-                                            "description": "Унікальний ідентифікатор особи в реєстрі"
-                                        },
-				        "active": {
-                          			"$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/active",
-			                        "type": "boolean",
-                        			"title": "Індикатор активності статусу особи"
-		                        },
-                                        "namerpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/namerpep",
-                                            "type": "string",
-                                            "title": "ПІБ",
-                                            "description": "ПІБ публічної особи"
-                                        },
-                                        "akarpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/akarpep",
-                                            "type": "string",
-                                            "title": "Перелік альтернативних ПІБ публічної особи",
-                                            "description": "Перелік альтернативних ПІБ публічної особи"
-                                        },
-                                        "type": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/relatetype",
-                                            "type": "number",
-                                            "title": "Тип особи"
-                                        },
-		                        "country": {
-                		            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/country",
-		                            "type": "object",
-                		            "title": "Блок інформації про ризиковість країни",
-		                            "$ref": "https://check.finap.com.ua/apiinfo/schema/v1/country.json"
-                		        },
-                                        "datebirthpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/datebirthpep",
-                                            "type": "string",
-                                            "title": "Дата народження PEP"
-                                        },
-                                        "categoryrpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/categoryrpep",
-                                            "type": "string",
-                                            "title": "Категорія публічності",
-                                            "description": "Категорія публічної особи"
-                                        },
-                                        "descriptiontyperpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/descriptiontyperpep",
-                                            "type": "string",
-                                            "title": "Цифрове значення категорії публічності пов’язаної публічної особи"
-                                        },
-
-                                        "briefrpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/briefrpep",
-                                            "type": "string",
-                                            "title": "Тип відношення",
-                                            "description": "Відношення до Публічної особи (наприклад: дочка, дружина, мати, бенефіціар і т.і.)"
-                                        },
-                                        "linkrpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/linkrpep",
-                                            "type": "number",
-                                            "title": "Цифровий код зв'язку згідно довідника НБУ K019",
-                                            "description": "Цифровий код зв'язку згідно довідника НБУ K019"
-                                        },
-                                        "photorpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/photorpep",
-                                            "type": "string",
-                                            "title": "Фото",
-                                            "description": "Посилання на фото публічної особи"
-                                        },
-                                        "jobrpep": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/jobrpep",
-                                            "type": "string",
-                                            "title": "Посада",
-                                            "description": "Посада публічної особи"
-                                        },
-                                        "relateorg": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/relateorg",
-                                            "type": "string",
-                                            "title": "Перелік ЄДРПОУ організацій (через які будується пов'язаність по КБВ при не прямому звязку)",
-                                            "description": "Перелік ЄДРПОУ організацій (через які будується пов'язаність по КБВ при не прямому звязку)"
-                                        },
-				        "archivelink": {
-                          			"$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/archivelink",
-			                        "type": "boolean",
-                        			"title": "Індикатор архівності зв'язку"
-		                        },
-                                        "links": {
-                                            "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/links",
-                                            "type": "array",
-                                            "title": "Масив даних Посилання на джерела пов'язаність з ПЕПами",
-                                            "description": "Масив даних Посилання на джерела пов'язаність з ПЕПами",
-                                            "items": {
-                                                "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/links/items",
-                                                "anyOf": [
-                                                    {
-                                                        "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/links/items/anyOf/0",
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "site": {
-                                                                "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/links/items/anyOf/0/properties/site",
-                                                                "type": "string",
-                                                                "title": "Посилання на офіційне джерело",
-                                                                "description": "Посилання на офіційне джерело"
-                                                            },
-                                                            "pdf": {
-                                                                "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/links/items/anyOf/0/properties/pdf",
-                                                                "type": "string",
-                                                                "title": "Посилання на файл pdf на сайті FinAP",
-                                                                "description": "Посилання на файл pdf на сайті FinAP. У разі недоступності джерела за посиланням, даний файл може слугувати підтвердженням"
-                                                            },
-                                                            "brief": {
-                                                                "$id": "#items/anyOf/0/properties/relatedPeps/items/anyOf/0/properties/links/items/anyOf/0/properties/brief",
-                                                                "type": "string",
-                                                                "title": "Опис посилання",
-                                                                "description": "Опис посилання"
-                                                            }
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
-        ]
-    }
