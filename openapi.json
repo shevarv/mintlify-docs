@@ -273,7 +273,7 @@
                 "$id": "#/properties/listdata",
                 "type": "string",
                 "title": "The listdata schema",
-                "description": "Число, яке при приведенні у двійковий формат відображає у яких списках даних був здійснений пошук збігів, див. https://check.finap.com.ua/apiinfo/#paramListdata"
+                "description": "Число, яке при приведенні у двійковий формат відображає у яких списках даних був здійснений пошук збігів"
             },
             "search": {
                 "$id": "#/properties/search",
@@ -296,8 +296,8 @@
             "result": {
                 "$id": "#/properties/result",
                 "type": "object",
-                "title": "The result schema",
-                "description": "Блок результатів обробки запит в реєстри CheckLists (див. https://check.finap.com.ua/apiinfo/#respon)",
+                "title": "Блок відповіді з реєстрів",
+                "description": "Блок результатів обробки запит в реєстри CheckLists",
                 "properties": {
                     "peps": {
                         "$id": "#/properties/result/properties/peps",
@@ -2707,8 +2707,6 @@
                                  {
                                      "$id": "#items/anyOf/0",
                                      "type": "object",
-                                     "title": "The first anyOf schema",
-                                     "description": "An explanation about the purpose of this instance.",
                                      "properties": {
                                          "ovd": {
                                              "$id": "#items/anyOf/0/properties/ovd",
