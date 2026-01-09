@@ -306,8 +306,7 @@
                         "type": [
                             "array",
                             "string"
-                        ],
-                         "$ref": "./schemas/pep.json"
+                        ]
                     },
                     "psanctions": {
                         "$id": "#/properties/result/properties/psanctions",
@@ -326,70 +325,7 @@
                             "array",
                             "string"
                         ],
-                        "items": {
-                             "$id": "#items",
-                             "anyOf": [
-                                 {
-                                     "$id": "#items/anyOf/0",
-                                     "type": "object",
-                                     "title": "The first anyOf schema",
-                                     "description": "An explanation about the purpose of this instance.",
-                                     "properties": {
-                                         "ovd": {
-                                             "$id": "#items/anyOf/0/properties/ovd",
-                                             "type": "string",
-                                             "title": "Підрозділ",
-                                             "description": "Підрозділ, яким було внесено інформацію до реєстру втрачених/викрадених документів"
-                                         },
-                                         "d_SERIES": {
-                                             "$id": "#items/anyOf/0/properties/d_SERIES",
-                                             "type": "string",
-                                             "title": "Серія",
-                                             "description": "Серія документа"
-                                         },
-                                         "d_NUMBER": {
-                                             "$id": "#items/anyOf/0/properties/d_NUMBER",
-                                             "type": "string",
-                                             "title": "Номер",
-                                             "description": "Номер документа."
-                                         },
-                                         "d_TYPE": {
-                                             "$id": "#items/anyOf/0/properties/d_TYPE",
-                                             "type": "string",
-                                             "title": "Тип",
-                                             "description": "Тип документа, можливі значення:ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ,ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ ДЛЯ ВИЇЗДУ ЗА КОРДОН,ПОСВІДЧЕННЯ ЧЛЕНА ЕКІПАЖУ"
-                                         },
-                                         "d_STATUS": {
-                                             "$id": "#items/anyOf/0/properties/d_STATUS",
-                                             "type": "string",
-                                             "title": "Статус",
-                                             "description": "Статус документа, можливі значення:ВИЗНАНО НЕДІЙСНИМ,ВИКРАДЕНИЙ,ВТРАЧЕНО,ПАСПОРТ ПОМЕРЛОГО НЕ ЗДАНИЙ ДО ДМС,ВИЛУЧЕНО З ОЗНАКАМИ ПІДРОБКИ,ВЛАСНИК ДОКУМЕНТА РОЗШУКУЄТЬСЯ,ВІДІЗВАНИЙ,НЕ ВИЛУЧЕНО У ЗААРЕШТОВАНОГО"
-                                         },
-                                         "theft_DATA": {
-                                             "$id": "#items/anyOf/0/properties/theft_DATA",
-                                             "type": "string",
-                                             "title": "Дата повідомлення",
-                                             "description": "Дата повідомлення про втрату/викрадення"
-                                         },
-                                         "insert_DATE": {
-                                             "$id": "#items/anyOf/0/properties/insert_DATE",
-                                             "type": "string",
-                                             "title": "Дата внесення до реєстру",
-                                             "description": "Дата внесення до реєстру втрачених документів"
-                                         },
-                                         "id": {
-                                             "$id": "#items/anyOf/0/properties/id",
-                                             "type": "string",
-                                             "title": "Ідентифікатор запису",
-                                             "description": "Ідентифікатор запису про втрачений документ"
-                                         }
-                                     }
-                                 }
-                             ]
-                        }
-                
-
-                      
+                         "$ref": "./schemas/passport.json"
                     },
                     "edr": {
                         "$id": "#/properties/result/properties/edr",
