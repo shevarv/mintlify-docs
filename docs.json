@@ -62,6 +62,7 @@
       },
       {
         "language": "pl",
+        "hidden": true,
         "tabs": [
           {
             "tab": "CheckLists",
@@ -84,6 +85,7 @@
       },
       {
         "language": "en",
+        "hidden": true,
         "tabs": [
           {
             "tab": "CheckLists",
