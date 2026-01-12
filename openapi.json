@@ -35,7 +35,7 @@
   "paths": {
     "/api": {
       "get": {
-        "summary": "CheckLists",
+        "summary": "CheckLists GET",
         "description": "Повертає результат з реєстрів CheckLists",
         "parameters": [
           {
@@ -140,7 +140,7 @@
         }
       },
       "post": {
-        "summary": "CheckLists",
+        "summary": "CheckLists POST",
         "description": "Повертає результат з реєстрів CheckLists",
         "requestBody": {
           "content": {
