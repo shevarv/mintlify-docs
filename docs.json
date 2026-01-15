@@ -177,6 +177,7 @@
   },
   "api": {
     "playground": {
+      "baseUrl": "https://gitlab.finap.com.ua",
       "proxy": false,
       "display": "interactive"
     }
