@@ -41,14 +41,13 @@
           {
             "tab": "CheckLists",
             "pages": [
+              "uk/check-lists/test",
               "uk/check-lists/produkt",
               "uk/check-lists/advertisement",
               {
                 "group": "REST API",
                 "openapi": "openapi.json",
                 "pages": [
-                  "uk/check-lists/rest-api/calc",
-                  "uk/check-lists/calculator",
                   "uk/check-lists/whatsnew",
                   "uk/check-lists/vebinars",
                   "uk/check-lists/input",
