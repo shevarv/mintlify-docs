@@ -41,9 +41,9 @@
           {
             "tab": "CheckLists",
             "pages": [
+              "uk/check-lists/test6",
+              "uk/check-lists/test5",
               "uk/check-lists/test4",
-              "uk/check-lists/test3",
-              "uk/check-lists/test",
               "uk/check-lists/produkt",
               "uk/check-lists/advertisement",
               {
