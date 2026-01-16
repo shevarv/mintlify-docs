@@ -48,40 +48,52 @@ const BIT_DATA = [
 
 
 
-{/* ====== КОМПОНЕНТ ====== */}
-export default function BitCalculator () {
+export default function BitCalculator() {
   const [decimalValue, setDecimalValue] = useState(0);
   const [selectedBits, setSelectedBits] = useState(new Set());
 
+  // оновлюємо вибір реєстрів при заповненні інпута з готовою суммою бітів
   const handleDecimalChange = (e) => {
     const value = parseInt(e.target.value) || 0;
     setDecimalValue(value);
     
     const bits = new Set();
     BIT_DATA.forEach(bit => {
-      if ((value & bit.value) === bit.value) bits.add(bit.bit);
+      if ((value & bit.value) === bit.value) {
+        bits.add(bit.bit);
+      }
     });
     setSelectedBits(bits);
   };
 
+  // оновлюємо суму при виборі реєстру
   const handleBitChange = (bit) => {
     const newSelectedBits = new Set(selectedBits);
-    newSelectedBits.has(bit) ? newSelectedBits.delete(bit) : newSelectedBits.add(bit);
+    if (newSelectedBits.has(bit)) {
+      newSelectedBits.delete(bit);
+    } else {
+      newSelectedBits.add(bit);
+    }
     setSelectedBits(newSelectedBits);
 
+    // калькулятор
     let value = 0;
     newSelectedBits.forEach(b => {
       const bitData = BIT_DATA.find(item => item.bit === b);
-      if (bitData) value += bitData.value;
+      if (bitData) {
+        value += bitData.value;
+      }
     });
     setDecimalValue(value);
   };
 
   return (
+  <>
     <div className="bit-calculator">
       <h1>Калькулятор бітів - listdata</h1>
-
+      
       <div className="calculator-container">
+        {/* Input для десяткового*/}
         <div className="input-section">
           <label htmlFor="decimal-input">Десяткове значення: </label>
           <input
@@ -94,12 +106,13 @@ export default function BitCalculator () {
           <p className="decimal-display">Значення: {decimalValue}</p>
         </div>
 
+        {/* Таблиця бітів */}
         <div className="table-section">
           <h2>Вибір бітів та реєстрів</h2>
           <table className="bits-table">
             <thead>
               <tr>
-                <th>✓</th>
+                <th className="checkbox-col">✓</th>
                 <th>Біт</th>
                 <th>Значення</th>
                 <th>Опис</th>
@@ -109,49 +122,58 @@ export default function BitCalculator () {
             </thead>
             <tbody>
               {BIT_DATA.map(bit => (
-                <tr key={bit.bit} className={selectedBits.has(bit.bit) ? 'selected' : 'unselected'}>
-                  <td>
+                <tr
+                  key={bit.bit}
+                  className={`bit-row ${selectedBits.has(bit.bit) ? 'selected' : 'unselected'}`}
+                >
+                  <td className="checkbox-cell">
                     <input
                       type="checkbox"
+                      id={`bit-${bit.bit}`}
                       checked={selectedBits.has(bit.bit)}
                       onChange={() => handleBitChange(bit.bit)}
                     />
                   </td>
-                  <td>{bit.bit}</td>
-                  <td>{bit.value}</td>
-                  <td>{bit.name}</td>
-                  <td>{bit.block ? <code>{bit.block}</code> : '—'}</td>
-                  <td>{bit.register || '—'}</td>
+                  <td className="bit-col">{bit.bit}</td>
+                  <td className="value-col">{bit.value}</td>
+                  <td className="description-col">{bit.name}</td>
+                  <td className="block-col">{bit.block ? <code>{bit.block}</code> : '—'}</td>
+                  <td className="register-col">{bit.register || '—'}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
+        {/* обрані біти */}
         {selectedBits.size > 0 && (
           <div className="summary-section">
             <h2>Обрані Реєстри ({selectedBits.size})</h2>
-            <div>
-              <p>Десяткове значення: <strong>{decimalValue}</strong></p>
-              {Array.from(selectedBits).sort((a,b) => a-b).map(bitIndex => {
-                const bit = BIT_DATA.find(b => b.bit === bitIndex);
-                return <div key={bitIndex}>Біт {bitIndex} - {bit.name}</div>;
-              })}
+            <div className="summary-content">
+              <div className="summary-value">
+                <span>Десяткове значення: </span>
+                <strong>{decimalValue}</strong>
+              </div>
+              <div className="summary-list">
+                {Array.from(selectedBits)
+                  .sort((a, b) => a - b)
+                  .map(bitIndex => {
+                    const bit = BIT_DATA.find(b => b.bit === bitIndex);
+                    return (
+                      <div key={bitIndex} className="summary-item">
+                        <span className="summary-bit">Біт {bitIndex}</span>
+                        <span className="summary-name"> - {bit.name}</span>
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
           </div>
         )}
       </div>
-
-      <style>{`
-        .bit-calculator { padding: 20px; font-family: sans-serif; }
-        .bits-table { border-collapse: collapse; width: 100%; margin-top: 10px; }
-        .bits-table th, .bits-table td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
-        .bit-row.selected { background-color: #f0f8ff; }
-        .bit-row.unselected { background-color: #fff; }
-        .input-section input { padding: 4px 6px; width: 150px; margin-left: 5px; }
-      `}</style>
     </div>
+	 </>
   );
-};
+}
 
 <BitCalculator client:load/>
