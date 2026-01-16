@@ -47,6 +47,7 @@
                 "group": "REST API",
                 "openapi": "openapi.json",
                 "pages": [
+                  "uk/check-lists/calculator",
                   "uk/check-lists/whatsnew",
                   "uk/check-lists/vebinars",
                   "uk/check-lists/input",
@@ -177,7 +178,6 @@
   },
   "api": {
     "playground": {
-      "baseUrl": "https://gitlab.finap.com.ua",
       "proxy": false,
       "display": "interactive"
     }
