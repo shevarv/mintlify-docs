@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import './BitCalculator.css';
-
+export default function BitCalculator() {
 const BIT_DATA = [
   { bit: 0, value: 1, name: 'ДСФМУ', block: 'psanctions', register: 'Реєстр Санкцій і застереження' },
   { bit: 1, value: 2, name: 'РНБО', block: 'psanctions', register: 'Реєстр Санкцій і застереження' },
@@ -43,7 +41,7 @@ const BIT_DATA = [
   { bit: 38, value: 274877906944, name: 'Пов\'язані з санкційними особами', block: 'psanctions', register: 'Реєстр Санкцій і застереження' },
 ];
 
-export default function BitCalculator() {
+  
   const [decimalValue, setDecimalValue] = useState(0);
   const [selectedBits, setSelectedBits] = useState(new Set());
 
