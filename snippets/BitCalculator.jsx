@@ -1,5 +1,3 @@
-import "./BitCalculator.css";
-
 export const BitCalculator = () => {
   const [decimalValue, setDecimalValue] = useState(0);
   const [selectedBits, setSelectedBits] = useState(new Set());
