@@ -43,7 +43,7 @@ const BIT_DATA = [
   { bit: 38, value: 274877906944, name: 'Пов\'язані з санкційними особами', block: 'psanctions', register: 'Реєстр Санкцій і застереження' },
 ];
 
-export const BitCalculator() {
+export const BitCalculator = () => {
   const [decimalValue, setDecimalValue] = useState(0);
   const [selectedBits, setSelectedBits] = useState(new Set());
 
