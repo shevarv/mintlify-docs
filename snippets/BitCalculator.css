@@ -8,7 +8,7 @@
   --bc-accent: #2563eb;
 }
 
-html[data-theme='dark'] {
+[data-theme='dark'] {
   --bc-bg: #020617;
   --bc-border: #334155;
   --bc-text: #e5e7eb;
