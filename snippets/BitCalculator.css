@@ -6,8 +6,6 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 
-  /* Фон сторінки */
-  background: linear-gradient(180deg, #0a1633 0%, #0c1f4a 50%, #0a1633 100%);
   min-height: 100vh;
 }
 
