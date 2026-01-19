@@ -41,8 +41,6 @@
           {
             "tab": "CheckLists",
             "pages": [
-              "uk/check-lists/test20",
-              "uk/check-lists/test4",
               "uk/check-lists/produkt",
               "uk/check-lists/advertisement",
               {
@@ -53,6 +51,7 @@
                   "uk/check-lists/vebinars",
                   "uk/check-lists/input",
                   "uk/check-lists/listdata",
+                  "uk/check-lists/calculator",
                   "uk/check-lists/references",
                   "uk/check-lists/errors"
                 ]
