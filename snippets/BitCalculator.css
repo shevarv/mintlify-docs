@@ -8,7 +8,7 @@
   --bc-accent: #2563eb;
 }
 
-.dark{
+.dark {
   --bc-bg: #020617;
   --bc-border: #334155;
   --bc-text: #e5e7eb;
@@ -27,9 +27,7 @@
   margin: 24px 0;
   font-size: 14px;
 }
-td{
-  min-width: 25px;
-}
+
 .bit-calculator h1,
 .bit-calculator h2 {
   margin-bottom: 12px;
@@ -55,6 +53,7 @@ td{
   border: 1px solid var(--bc-border);
   padding: 8px;
   text-align: left;
+  min-width:25px;
 }
 
 .bit-row.selected {
