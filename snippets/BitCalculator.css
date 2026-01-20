@@ -1,6 +1,6 @@
 /* Mintlify theme variables */
 :root {
-  --bc-bg: #ffffff;
+  --bc-bg: opacity: 0.1;
   --bc-border: #e5e7eb;
   --bc-text: #0f172a;
   --bc-muted: #64748b;
