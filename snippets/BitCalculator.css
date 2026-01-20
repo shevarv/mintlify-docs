@@ -9,7 +9,7 @@
 }
 
 .dark {
-  --bc-bg: #020617;
+  --bc-bg: opacity: 0.1;
   --bc-border: #334155;
   --bc-text: #e5e7eb;
   --bc-muted: #94a3b8;
