@@ -82,7 +82,6 @@ const BIT_DATA = [
 
   return (
     <div className="bit-calculator .dark">
-      <h1>Калькулятор Бітів - listdata</h1>
       
       <div className="calculator-container">
         {/* Input для десяткового числа */}
