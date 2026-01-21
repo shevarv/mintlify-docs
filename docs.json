@@ -57,6 +57,18 @@
               },
               "uk/check-lists/faq"
             ]
+          },
+          {
+            "tab": "ISPPA for NBFI",
+            "pages": [
+              "uk/isppa-for-nbfi/about",
+              "uk/isppa-for-nbfi/install",
+              "uk/isppa-for-nbfi/start",
+              "uk/isppa-for-nbfi/import",
+              "uk/isppa-for-nbfi/check-lists-skrining",
+              "uk/isppa-for-nbfi/analize",
+              "uk/check-lists/faq-copied-1"
+            ]
           }
         ]
       },
