@@ -43,6 +43,7 @@
             "pages": [
               "uk/check-lists/produkt",
               "uk/check-lists/advertisement",
+              "uk/check-lists/faq",
               {
                 "group": "REST API",
                 "openapi": "openapi.json",
@@ -54,8 +55,7 @@
                   "uk/check-lists/references",
                   "uk/check-lists/errors"
                 ]
-              },
-              "uk/check-lists/faq"
+              }
             ]
           },
           {
