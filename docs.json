@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "willow",
-  "name": "CheckLists",
+  "name": "FinAP",
   "colors": {
     "primary": "#110960",
     "light": "#0648c9",
@@ -169,7 +169,7 @@
       "facebook": "https://www.facebook.com/news.finap"
     }
   },
-  "description": "FinAP ChecklIsts documentation ",
+  "description": "FinAP documentation ",
   "background": {
     "color": {
       "dark": "#020c2c"
