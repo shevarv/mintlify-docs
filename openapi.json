@@ -32,149 +32,157 @@
       "IDsubjectFM" : []
     }
   ],
-  "paths": {
+    "paths": {
 		"/api": {
-		  "get": {
-			"summary": "CheckLists GET",
-			"description": "Повертає результат з реєстрів CheckLists",
-			"parameters": [
-			  {
-				"name": "listdata",
-				"in": "query",
-				"description": "Число, кожен біт якого при переведенні у двійковий формат визначає перелік баз (списків) у яких має здійснюватися пошук (або сума чисел, які відповідають пошуковим спискам)",
-				"schema": {
-				  "type": "number"
-				}
-			  },
-			  {
-				"name": "name",
-				"in": "query",
-				"description": "Прізвище, ім'я, по-батькові або назва",
-				"schema": {
-				  "type": "string"
-				}
-			  },
-			  {
-				"name": "namelat",
-				"in": "query",
-				"description": "Прізвище, ім'я, по-батькові або назва у латиниці. За замовчуванням генерується із поля name за результатами роботи алгоритму транслітерації",
-				"schema": {
-				  "type": "string"
-				}
-			  },
-			  {
-				"name": "ipn",
-				"in": "query",
-				"description": "Індивідуальний податковий номер фізичної особи - резидента (більшість реєстрів не містять даних про РНОКПП), або ЄДРПОУ юридичної особи резидента",
-				"schema": {
-				  "type": "string"
-				}
-			  },
-			  {
-				"name": "date",
-				"in": "query",
-				"description": "Дата народження фізичної особи у форматі “YYYY-MM-DD”",
-				"schema": {
-				  "type": "date"
-				}
-			  },
-			  {
-				"name": "doc",
-				"in": "query",
-				"description": "Реквізити документа фізичної особи (національний пасторт, ID картка або паспорт для виїзду за кордон) у форматі серія і номер, або просто номер (якщо ID карта). Наявність або відсутність пробілу між серією і номером значення не має.",
-				"schema": {
-				  "type": "string"
-				}
-			  },
-			  {
-				"name": "doctype",
-				"in": "query",
-				"description": "Тип документу. Може приймати значення 1 (ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ в тому числі і ID карти), 2 (ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ ДЛЯ ВИЇЗДУ ЗА КОРДОН), 0 – обидва варіанти. За замовчуванням – 0",
-				"schema": {
-				  "type": "number"
-				}
-			  },
-			  {
-				"name": "search",
-				"in": "query",
-				"description": "Метод пошуку збігів по реєстрам (1 — повнотекстний (за замовчуванням), 2 — з корекцією помилок). За замовчуванням – 1",
-				"schema": {
-				  "type": "number",
-				  "default": 1
-				}
-			  },
-			  {
-				"name": "lowranklimit",
-				"in": "query",
-				"description": "Число, що визначає нижню межу співпадінь назви чи ПІБ у відсотках",
-				"schema": {
-				  "type": "number",
-				  "default": 0
-				}
-			  }
-			],
-			"responses": {
-			  "200": {
-				"description": "Успішна відповідь",
-				"content": {
-				  "application/json": {
+			"get": {
+				"summary": "CheckLists GET",
+				"security": [
+					{
+					"tokken": [], 
+					"IDsubjectFM" : []
+					}
+				],        
+				"description": "Повертає результат з реєстрів CheckLists",
+				"parameters": [
+				  {
+					"name": "listdata",
+					"in": "query",
+					"description": "Число, кожен біт якого при переведенні у двійковий формат визначає перелік баз (списків) у яких має здійснюватися пошук (або сума чисел, які відповідають пошуковим спискам)",
 					"schema": {
-					  "type": "array",
-					  "items": {
-						"$ref": "#/components/schemas/Success"
+					  "type": "number",
+					  "default": -1
+					}
+				  },
+				  {
+					"name": "name",
+					"in": "query",
+					"description": "Прізвище, ім'я, по-батькові або назва",
+					"schema": {
+					  "type": "string"
+					}
+				  },
+				  {
+					"name": "namelat",
+					"in": "query",
+					"description": "Прізвище, ім'я, по-батькові або назва у латиниці. За замовчуванням генерується із поля name за результатами роботи алгоритму транслітерації",
+					"schema": {
+					  "type": "string"
+					}
+				  },
+				  {
+					"name": "ipn",
+					"in": "query",
+					"description": "Індивідуальний податковий номер фізичної особи - резидента (більшість реєстрів не містять даних про РНОКПП), або ЄДРПОУ юридичної особи резидента",
+					"schema": {
+					  "type": "string"
+					}
+				  },
+				  {
+					"name": "date",
+					"in": "query",
+					"description": "Дата народження фізичної особи у форматі “YYYY-MM-DD”",
+					"schema": {
+					  "type": "date"
+					}
+				  },
+				  {
+					"name": "doc",
+					"in": "query",
+					"description": "Реквізити документа фізичної особи (національний пасторт, ID картка або паспорт для виїзду за кордон) у форматі серія і номер, або просто номер (якщо ID карта). Наявність або відсутність пробілу між серією і номером значення не має.",
+					"schema": {
+					  "type": "string"
+					}
+				  },
+				  {
+					"name": "doctype",
+					"in": "query",
+					"description": "Тип документу. Може приймати значення 1 (ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ в тому числі і ID карти), 2 (ПАСПОРТ ГРОМАДЯНИНА УКРАЇНИ ДЛЯ ВИЇЗДУ ЗА КОРДОН), 0 – обидва варіанти",
+					"schema": {
+					  "type": "number",
+					  "default": 0
+					}
+				  },
+				  {
+					"name": "search",
+					"in": "query",
+					"description": "Метод пошуку збігів по реєстрам (1 — повнотекстний (за замовчуванням), 2 — з корекцією помилок)",
+					"schema": {
+					  "type": "number",
+					  "default": 1
+					}
+				  },
+				  {
+					"name": "lowranklimit",
+					"in": "query",
+					"description": "Число, що визначає нижню межу співпадінь назви чи ПІБ у відсотках",
+					"schema": {
+					  "type": "number",
+					  "default": 0
+					}
+				  }
+				],
+				"responses": {
+					  "200": {
+						"description": "Успішна відповідь",
+						"content": {
+						  "application/json": {
+							"schema": {
+							  "type": "array",
+							  "items": {
+								"$ref": "#/components/schemas/Success"
+							  }
+							}
+						  }
+						}
+					  },
+					  "4XX": {
+						"description": "Помилка",
+						"content": {
+						  "application/json": {
+							"schema": {
+							  "$ref": "#/components/schemas/Error"
+							}
+						  }
+						}
+				  }
+				}
+			},
+			"post": {
+				"summary": "CheckLists POST",
+				"description": "Повертає результат з реєстрів CheckLists",
+				"requestBody": {
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/PostRequest"
+					  }
+					}
+				  },
+				  "required": true
+				},
+				"responses": {
+				  "200": {
+					"description": "Успішна відповідь",
+					"content": {
+					  "application/json": {
+						"schema": {
+						  "$ref": "#/components/schemas/Success"
+						}
+					  }
+					}
+				  },
+				  "4XX": {
+					"description": "Помилка",
+					"content": {
+					  "application/json": {
+						"schema": {
+						  "$ref": "#/components/schemas/Error"
+						}
 					  }
 					}
 				  }
 				}
-			  },
-			  "4XX": {
-				"description": "Помилка",
-				"content": {
-				  "application/json": {
-					"schema": {
-					  "$ref": "#/components/schemas/Error"
-					}
-				  }
-				}
-			  }
 			}
-		  },
-		  "post": {
-			"summary": "CheckLists POST",
-			"description": "Повертає результат з реєстрів CheckLists",
-			"requestBody": {
-			  "content": {
-				"application/json": {
-				  "schema": {
-					"$ref": "#/components/schemas/PostRequest"
-				  }
-				}
-			  },
-			  "required": true
-			},
-			"responses": {
-			  "200": {
-				"description": "Успішна відповідь",
-				"content": {
-				  "application/json": {
-					"schema": {
-					  "$ref": "#/components/schemas/Success"
-					}
-				  }
-				}
-			  },
-			  "4XX": {
-				"description": "Помилка",
-				"content": {
-				  "application/json": {
-					"schema": {
-					  "$ref": "#/components/schemas/Error"
-					}
-				  }
-				}
-			  }
-			}
-		  }
 		}
 	},
 	"components": {
