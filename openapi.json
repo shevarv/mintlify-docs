@@ -26,12 +26,6 @@
       "description": "Резерв"
     }
   ],
-  "security": [
-    {
-      "tokken": [], 
-      "IDsubjectFM" : []
-    }
-  ],
     "paths": {
 		"/api": {
 			"get": {
