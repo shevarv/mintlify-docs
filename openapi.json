@@ -619,7 +619,7 @@
 						"$id": "#items/anyOf/0/properties/country_citizenship",
 						"type": "array",
 						"title": "Масив даних про країни громадянства",
-						"description": "**[NEW]** Дані про країни громадянства",
+						"description": "🆕 Дані про країни громадянства",
 						"items": {
 							"$id": "#items/anyOf/0/properties/country_citizenship/items/anyOf/0",
 							"type": "object",
@@ -629,7 +629,7 @@
 					"country_reg": {
 						"$id": "#items/anyOf/0/properties/country_reg",
 						"type": "array",
-						"title": "Масив даних про країни реєстрації",
+						"title": "🆕 Масив даних про країни реєстрації",
 						"description": "Дані про країни реєстрації",
 						"items": {
 							"$id": "#items/anyOf/0/properties/country_reg/items/anyOf/0",
