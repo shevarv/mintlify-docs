@@ -1557,6 +1557,26 @@
 				  "title": "Зв'язок з Росії",
 				  "description": "Громадянин Росії присутній серед власників (в тому числі бенефіціарів). Даний параметр може приймати значення true або взагалі бути відсутнім у разі не виявлення таких осіб"
 			  },
+			  "n_contacts": {
+				  "$id": "#items/anyOf/0/properties/n_contacts",
+				  "type": "number",
+				  "description": "К-сть організацій, де є спільні контакти"
+			  },
+			  "phone_edrpou": {
+				  "$id": "#items/anyOf/0/properties/phone_edrpou",
+				  "type": "string",
+				  "description": "ЄДРПОУ організацій, де є співпадіння за номером телефону"
+			  },
+			  "email_edrpou": {
+				  "$id": "#items/anyOf/0/properties/email_edrpou",
+				  "type": "string",
+				  "description": "ЄДРПОУ організацій, де є співпадіння за електронною поштою"
+			  },
+			  "www_edrpou": {
+				  "$id": "#items/anyOf/0/properties/www_edrpou",
+				  "type": "string",
+				  "description": "ЄДРПОУ організацій, де є співпадіння за веб ресурсами"
+			  },
 			  "date_last_changed": {
 				  "$id": "#items/anyOf/0/properties/date_last_changed",
 				  "type": "string",
@@ -1618,6 +1638,11 @@
 							  "$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/edrpou",
 							  "type": "string",
 							  "description": "ЄДРПОУ ЮО учасника"
+						  },
+						  "entity_type": {
+							  "$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/entity_type",
+							  "type": "number",
+							  "description": "Тип особи (0-фізична, 1 - юридична)"
 						  },
 						  "indicators": {
 							  "$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/indicators",
@@ -1777,6 +1802,11 @@
 							  "$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/edrpou",
 							  "type": "string",
 							  "description": "ЄДРПОУ ЮО через яку здійснюється опосередкований вплив"
+						  },
+						  "entity_type": {
+							  "$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/entity_type",
+							  "type": "number",
+							  "description": "Тип особи (0-фізична, 1 - юридична)"
 						  },
 						  "indicators": {
 							  "$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/indicators",
@@ -1950,6 +1980,11 @@
 						  "type": "string",
 						  "description": "ПІБ керівника"
 					  },
+					  "entity_type": {
+						  "$id": "#items/anyOf/0/properties/manager_info/items/anyOf/0/properties/entity_type",
+						  "type": "number",
+						  "description": "Тип особи (0-фізична, 1 - юридична)"
+					  },
 					  "position": {
 						  "$id": "#items/anyOf/0/properties/manager_info/properties/position",
 						  "type": "string",
@@ -2021,6 +2056,11 @@
 								"$id": "#items/anyOf/0/properties/signers/properties/name",
 								"type": "string",
 								"description": "ПІБ підписанта"
+							},
+							"entity_type": {
+								"$id": "#items/anyOf/0/properties/signers/items/anyOf/0/properties/entity_type",
+								"type": "number",
+								"description": "Тип особи (0-фізична, 1 - юридична)"
 							},
 							"position": {
 								"$id": "#items/anyOf/0/properties/signers/properties/position",
@@ -2095,7 +2135,12 @@
 							  "type": "string",
 							  "title": "ЄДРПОУ",
 							  "description": "Код ЄДРПОУ центрального чи місцевого органу виконавчої влади, до сфери управління якого належить державне підприємство, або частку держави у статутному капіталі юридичної особи, якщо ця частка становить не менше 25 відсотків"
-						  }
+						  },
+							"entity_type": {
+								"$id": "#items/anyOf/0/properties/eps/items/anyOf/0/properties/entity_type",
+								"type": "number",
+								"description": "Тип особи (0-фізична, 1 - юридична)"
+							}
 					  }
 				  }
 			  },
@@ -2149,7 +2194,12 @@
 							  "type": "string",
 							  "title": "ЄДРПОУ",
 							  "description": "Ідентифікаційний код правонаступника"
-						  }
+						  },
+							"entity_type": {
+								"$id": "#items/anyOf/0/properties/assignees/items/anyOf/0/properties/entity_type",
+								"type": "number",
+								"description": "Тип особи (0-фізична, 1 - юридична)"
+							}
 					  }
 				  }
 			  },
@@ -2173,7 +2223,12 @@
 							  "type": "string",
 							  "title": "ЄДРПОУ",
 							  "description": "Ідентифікаційний код попередника"
-						  }
+						  },
+							"entity_type": {
+								"$id": "#items/anyOf/0/properties/predecs/items/anyOf/0/properties/entity_type",
+								"type": "number",
+								"description": "Тип особи (0-фізична, 1 - юридична)"
+							}
 					  }
 				  }
 			  },
@@ -2330,6 +2385,11 @@
 							  "title": "Назва",
 							  "description": "Назва відокремленого підрозділу юридичної особи або материнської компанії"
 						  },
+							"entity_type": {
+								"$id": "#items/anyOf/0/properties/branches/items/anyOf/0/properties/entity_type",
+								"type": "number",
+								"description": "Тип особи (0-фізична, 1 - юридична)"
+							},							
 						  "address": {
 							  "$id": "#items/anyOf/0/properties/branches/items/anyOf/0/properties/address",
 							  "type": "string",
