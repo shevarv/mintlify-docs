@@ -608,7 +608,7 @@
 						"$id": "#items/anyOf/0/properties/country_pep",
 						"type": "array",
 						"title": "Масив даних про країни виконання обов'язків PEP",
-						"description": "Дані про країни виконання обов'язків PEP",
+						"description": "🆕 Дані про країни виконання обов'язків PEP",
 						"items": {
 							"$id": "#items/anyOf/0/properties/country_pep/items/anyOf/0",
 							"type": "object",
@@ -619,7 +619,7 @@
 						"$id": "#items/anyOf/0/properties/country_citizenship",
 						"type": "array",
 						"title": "Масив даних про країни громадянства",
-						"description": "Дані про країни громадянства",
+						"description": "**[NEW]** Дані про країни громадянства",
 						"items": {
 							"$id": "#items/anyOf/0/properties/country_citizenship/items/anyOf/0",
 							"type": "object",
