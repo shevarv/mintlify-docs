@@ -3890,6 +3890,31 @@
 					  "type": "string",
 					  "description": "Категорія"
 				  },
+				  "wantedby": {
+					  "$id": "#items/anyOf/0/properties/wantedby",
+					  "type": "string",
+					  "description": "Країна розшуку"
+				  },
+				  "ethnicorigin": {
+					  "$id": "#items/anyOf/0/properties/ethnicorigin",
+					  "type": "string",
+					  "description": "Етнос"
+				  },
+				  "published": {
+					  "$id": "#items/anyOf/0/properties/published",
+					  "type": "string",
+					  "description": "Дата публікації"
+				  },
+				  "lastmodification": {
+					  "$id": "#items/anyOf/0/properties/lastmodification",
+					  "type": "string",
+					  "description": "Дані про крайню модифікацію"
+				  },
+				  "remark": {
+					  "$id": "#items/anyOf/0/properties/remark",
+					  "type": "string",
+					  "description": "Додаткова інформація"
+				  },
 				  "last_actual_date": {
 					  "$id": "#items/anyOf/0/properties/last_actual_date",
 					  "type": "string",
