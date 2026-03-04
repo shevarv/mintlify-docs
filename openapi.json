@@ -608,7 +608,7 @@
 						"$id": "#items/anyOf/0/properties/country_pep",
 						"type": "array",
 						"title": "Масив даних про країни виконання обов'язків PEP",
-						"description": "🆕 Дані про країни виконання обов'язків PEP",
+						"description": "Дані про країни виконання обов'язків PEP",
 						"items": {
 							"$id": "#items/anyOf/0/properties/country_pep/items/anyOf/0",
 							"type": "object",
