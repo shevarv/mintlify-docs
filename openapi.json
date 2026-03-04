@@ -603,6 +603,12 @@
 						"description": "Інформація про ризиковість країни",
 						"$ref": "#/components/schemas/country"
 					},
+					"country_pep": {
+						"title": "Блок інформації про країни виконання обов'язків PEP",
+						"type": "array",
+						"description": "Інформація про країни виконання обов'язків PEP",
+						"$ref": "#/components/schemas/country"
+					},
 					"ipn": {
 						"$id": "#items/anyOf/0/properties/ipn",
 						"type": "string",
