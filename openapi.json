@@ -1469,19 +1469,25 @@
 						"$id": "#items/anyOf/0/properties/kbv",
 						"type": "string",
 						"title": "Причетність на рівні КБВ",
-						"description": "Чи особа є КБВ в ЮО (0 або 1)"
+						"description": "Чи особа є КБВ в ЮО (0 - ні або 1 - збіг за назвою/ПІБ, 2 - точний збіг по коду (для ФО потбіен додатковий доступ))"
 					},
 					"mng": {
 						"$id": "#items/anyOf/0/properties/mng",
 						"type": "string",
 						"title": "Причетність на керівника",
-						"description": "Чи особа є керівником в ЮО (0 або 1)"
+						"description": "Чи особа є керівником в ЮО (0 - ні або 1 - збіг за назвою/ПІБ, 2 - точний збіг по коду (для ФО потбіен додатковий доступ))"
 					},
 					"own": {
 						"$id": "#items/anyOf/0/properties/own",
 						"type": "string",
 						"title": "Причетність на рівні учасника",
-						"description": "Чи особа є учасником в ЮО (0 або 1)"
+						"description": "Чи особа є учасником в ЮО (0 - ні або 1 - збіг за назвою/ПІБ, 2 - точний збіг по коду (для ФО потбіен додатковий доступ))"
+					},
+					"assignee": {
+						"$id": "#items/anyOf/0/properties/assignee",
+						"type": "string",
+						"title": "Причетність на рівні представника",
+						"description": "Чи особа є представником в ЮО (0 - ні або 1 - збіг за назвою/ПІБ, 2 - точний збіг по коду (для ФО потбіен додатковий доступ))"
 					},
 					"isbilorussian": {
 						"$id": "#items/anyOf/0/properties/isbilorussian",
@@ -1900,7 +1906,12 @@
 								"rel_edrpou": {
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/rel_edrpou",
 									"type": "string",
-									"description": "Перелік ЄДРПОУ в яких дана особа ще є учасником (виключно з даною)"
+									"description": "Перелік ЄДРПОУ інших ЮО, в яких дана особа ще є учасником"
+								},
+								"rel_edrpou_kbv": {
+									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/rel_edrpou_kbv",
+									"type": "string",
+									"description": "Перелік ЄДРПОУ інших ЮО, в яких дана особа є КБВ"
 								},
 								"address_founder": {
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/address_founder",
@@ -2096,7 +2107,12 @@
 								"rel_edrpou": {
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/rel_edrpou",
 									"type": "string",
-									"description": "Перелік ЄДРПОУ в яких дана особа ще є бенефіціаром (виключно з даною)"
+									"description": "Перелік ЄДРПОУ інших ЮО, в яких дана особа ще є бенефіціаром"
+								},
+								"rel_edrpou_founder": {
+									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/rel_edrpou_founder",
+									"type": "string",
+									"description": "Перелік ЄДРПОУ інших ЮО, в яких дана особа є учасником"
 								},
 								"address_mb": {
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/address_mb",
