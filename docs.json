@@ -188,6 +188,7 @@
     "eyebrows": "section"
   },
   "api": {
+    "baseUrl": "https://your-gitlab-api-url.com",
     "playground": {
       "proxy": false,
       "display": "interactive"
