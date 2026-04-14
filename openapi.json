@@ -4293,6 +4293,11 @@
 				"$id": "#items/anyOf/0",
 				"type": "object",
 				"properties": {
+					"codecountr": {
+						"$id": "#items/anyOf/0/properties/codecountr",
+						"type": "number",
+						"description": "Цифровий код країни"
+					},
 					"countryname": {
 						"$id": "#items/anyOf/0/properties/countryname",
 						"type": "string",
