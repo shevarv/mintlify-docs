@@ -612,7 +612,7 @@
 						"items": {
 							"$id": "#items/anyOf/0/properties/country_pep/items/anyOf/0",
 							"type": "object",
-  						"$ref": "#/components/schemas/country"
+  							"$ref": "#/components/schemas/country"
 						}
 					},
 					"country_citizenship": {
@@ -623,7 +623,7 @@
 						"items": {
 							"$id": "#items/anyOf/0/properties/country_citizenship/items/anyOf/0",
 							"type": "object",
-  						"$ref": "#/components/schemas/country"
+  							"$ref": "#/components/schemas/country"
 						}
 					},
 					"country_reg": {
@@ -634,7 +634,7 @@
 						"items": {
 							"$id": "#items/anyOf/0/properties/country_reg/items/anyOf/0",
 							"type": "object",
-  						"$ref": "#/components/schemas/country"
+  							"$ref": "#/components/schemas/country"
 						}
 					},
 					"ipn": {
@@ -1579,7 +1579,7 @@
 						"$id": "#items/anyOf/0/properties/type",
 						"type": "number",
 						"title": "Тип особи",
-						"description": "Тип особи (0 – ФОП, 1 – ЮО, 2 – Відокремлений підрозділ)"
+						"description": "Тип особи (0 – ФОП, 1 – ЮО, 2 – Відокремлений підрозділ, 3 - Підрозділ іноземної компанії)"
 					},
 					"branchstate": {
 						"$id": "#items/anyOf/0/properties/branchstate",
@@ -1608,6 +1608,25 @@
 						"$id": "#items/anyOf/0/properties/altname",
 						"type": "string",
 						"description": "Альтернативні назви"
+					},
+					"e_resident": {
+						"$id": "#items/anyOf/0/properties/e_resident",
+						"type": "boolean",
+						"title": "Признак електронного резедента для ФОП",
+						"description": "Признак електронного резедента для ФОП (true - якщо e_resident, false (або відсутнє з-ння) - ні)"
+					},
+					"country": {
+						"$id": "#items/anyOf/0/properties/country",
+						"type": "string",
+						"title": "Країна реєстрації ЮО або громадянства ФОП",
+						"description": "Країна реєстрації ЮО або громадянства ФОП"
+					},
+					"country_risk": {
+						"$id": "#items/anyOf/0/properties/country_risk",
+						"type": "object",
+						"title": "Блок інформації про ризиковість країни реєстрації ЮО або громадянства ФОП",
+						"description": "Блок інформації про ризиковість країни реєстрації ЮО або громадянства ФОП",
+						"$ref": "#/components/schemas/country"							
 					},
 					"address": {
 						"$id": "#items/anyOf/0/properties/address",
@@ -1937,9 +1956,7 @@
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/country_of_origin_risks",
 									"type": "object",
 									"description": "Блок інформації про ризиковість країни громадянства учасника",
-									"items": {
-										"$ref": "#/components/schemas/edrfullinfo"							
-									}
+									"$ref": "#/components/schemas/country"							
 								},
 								"country_of_register": {
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/country_of_register",
@@ -1950,9 +1967,7 @@
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/country_of_register_risks",
 									"type": "object",
 									"description": "Блок інформації про ризиковість країни реєстрації учасника",
-									"items": {
-										"$ref": "#/components/schemas/edrfullinfo"							
-									}
+									"$ref": "#/components/schemas/country"							
 								}
 							}
 						}
@@ -2138,9 +2153,7 @@
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/country_of_origin_risks",
 									"type": "object",
 									"description": "Блок інформації про ризиковість країни громадянства бенефіціара",
-									"items": {
-										"$ref": "#/components/schemas/edrfullinfo"							
-									}
+									"$ref": "#/components/schemas/country"							
 								},
 								"country_of_register": {
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/country_of_register",
@@ -2151,9 +2164,7 @@
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/country_of_register_risks",
 									"type": "object",
 									"description": "Блок інформації про ризиковість країни реєстрації бенефіціара",
-									"items": {
-										"$ref": "#/components/schemas/edrfullinfo"							
-									}
+									"$ref": "#/components/schemas/country"							
 								}
 							}
 						}
