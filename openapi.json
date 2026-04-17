@@ -1618,8 +1618,8 @@
 					"country": {
 						"$id": "#items/anyOf/0/properties/country",
 						"type": "string",
-						"title": "Країна реєстрації ЮО або громадянства ФОП",
-						"description": "Країна реєстрації ЮО або громадянства ФОП"
+						"title": "Країна реєстрації ЮО або громадянств(а) ФОП",
+						"description": "Країна реєстрації ЮО або громадянств(а) ФОП"
 					},
 					"country_risk": {
 						"$id": "#items/anyOf/0/properties/country_risk",
@@ -1627,6 +1627,15 @@
 						"title": "Блок інформації про ризиковість країни реєстрації ЮО або громадянства ФОП",
 						"description": "Блок інформації про ризиковість країни реєстрації ЮО або громадянства ФОП",
 						"$ref": "#/components/schemas/country"							
+					},
+					"countries_risk": {
+						"$id": "#items/anyOf/0/properties/countries_risk",
+						"type": "array",
+						"title": "Блок інформації про ризиковість країни громадянства ФОП у разі наявності мультигромадянства",
+						"description": "Інформації про ризиковість країни громадянства ФОП у разі наявності мультигромадянства",
+							"items": {
+								"$ref": "#/components/schemas/country"
+							}
 					},
 					"address": {
 						"$id": "#items/anyOf/0/properties/address",
@@ -1950,13 +1959,22 @@
 								"country_of_origin": {
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/country_of_origin",
 									"type": "string",
-									"description": "Країна громадянства учасника"
+									"description": "Країна(и) громадянства учасника"
 								},
 								"country_of_origin_risks": {
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/country_of_origin_risks",
 									"type": "object",
 									"description": "Блок інформації про ризиковість країни громадянства учасника",
 									"$ref": "#/components/schemas/country"							
+								},
+								"countries_of_origin_risks": {
+									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/countries_of_origin_risks",
+									"type": "array",
+									"title": "Блок інформації про ризиковість країни громадянства учасника у разі наявності мультигромадянства",
+									"description": "Інформації про ризиковість країни громадянства учасника у разі наявності мультигромадянства",
+										"items": {
+											"$ref": "#/components/schemas/country"
+										}
 								},
 								"country_of_register": {
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/country_of_register",
@@ -1968,7 +1986,7 @@
 									"type": "object",
 									"description": "Блок інформації про ризиковість країни реєстрації учасника",
 									"$ref": "#/components/schemas/country"							
-								}
+								}								
 							}
 						}
 					},
@@ -2147,13 +2165,22 @@
 								"country_of_origin": {
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/country_of_origin",
 									"type": "string",
-									"description": "Країна громадянства бенефіціара"
+									"description": "Країна(и) громадянства бенефіціара"
 								},
 								"country_of_origin_risks": {
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/country_of_origin_risks",
 									"type": "object",
 									"description": "Блок інформації про ризиковість країни громадянства бенефіціара",
 									"$ref": "#/components/schemas/country"							
+								},
+								"countries_of_origin_risks": {
+									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/countries_of_origin_risks",
+									"type": "array",
+									"title": "Блок інформації про ризиковість країни громадянства бенефіціара у разі наявності мультигромадянства",
+									"description": "Інформації про ризиковість країни громадянства бенефіціара у разі наявності мультигромадянства",
+										"items": {
+											"$ref": "#/components/schemas/country"
+										}
 								},
 								"country_of_register": {
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/country_of_register",
