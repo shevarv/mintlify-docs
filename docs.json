@@ -15,6 +15,15 @@
     "global": {
       "anchors": [
         {
+          "anchor": "FinAP",
+          "icon": "newspaper",
+          "color": {
+            "light": "#2c15a3",
+            "dark": "#2c15a3"
+          },
+          "href": "https://finap.com.ua/"
+        },
+        {
           "anchor": "CheckLists",
           "icon": "book-open-cover",
           "color": {
@@ -24,13 +33,22 @@
           "href": "https://checklists.finap.com.ua"
         },
         {
-          "anchor": "FinAP",
-          "icon": "newspaper",
+          "anchor": "CheckLists Android",
+          "icon": "mobile",
           "color": {
             "light": "#2c15a3",
             "dark": "#2c15a3"
           },
-          "href": "https://finap.com.ua/"
+          "href": "https://play.google.com/store/apps/details?id=finAPchecklists.app"
+        },
+        {
+          "anchor": "CheckLists iOS",
+          "icon": "mobile",
+          "color": {
+            "light": "#2c15a3",
+            "dark": "#2c15a3"
+          },
+          "href": "https://apps.apple.com/ua/app/finap-checklists/id6748704913?l=uk"
         }
       ]
     },
