@@ -3864,6 +3864,12 @@
 						"title": "Контакти",
 						"description": "Контакти"
 					},
+					"info": {
+						"$id": "#items/anyOf/0/properties/info",
+						"type": "string",
+						"title": "Додаткова інформація",
+						"description": "Додаткова інформація"
+					},
 					"percent": {
 						"$id": "#items/anyOf/0/properties/percent",
 						"type": "number",
