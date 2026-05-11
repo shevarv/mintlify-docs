@@ -18,11 +18,19 @@
       "description": "Резерв"
     },
     {
-      "url": "https://res2.finap.com.ua:9443",
+      "url": "https://res4.finap.com.ua:9443",
       "description": "Резерв"
     },
     {
-      "url": "https://res3.finap.com.ua:9443",
+      "url": "https://res5.finap.com.ua:9443",
+      "description": "Резерв"
+    },
+    {
+      "url": "https://res6.finap.com.ua:9443",
+      "description": "Резерв"
+    },
+    {
+      "url": "https://res8.finap.com.ua:9443",
       "description": "Резерв"
     }
   ],
