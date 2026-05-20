@@ -1600,7 +1600,8 @@
 					},
 					"indicators": {
 						"$id": "#items/anyOf/0/properties/indicators",
-						"type": "number",
+						"type": "integer",
+						"format": "int64",
 						"title": "Бітова маска індикаторів в числовому вигляді",
 						"description": "Бітова маска індикаторів в числовому вигляді"
 					},
@@ -1786,7 +1787,7 @@
 					},
 					"address_mreg": {
 						"$id": "#items/anyOf/0/properties/address_mreg",
-						"type": "number",
+						"type": "string",
 						"title": "Ймовірна адреса масової реєстрації",
 						"description": "К-сть ЮО зареєстровані на адресу реєстрації даної ЮО"
 					},
@@ -1854,7 +1855,8 @@
 					},
 					"indicators": {
 						"$id": "#items/anyOf/0/properties/indicators",
-						"type": "number",
+						"type": "integer",
+						"format": "int64",
 						"description": "Бітова маска індикаторів в числовому вигляді"
 					},
 					"indicators_str": {
@@ -1916,7 +1918,8 @@
 								},
 								"indicators": {
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/indicators",
-									"type": "number",
+									"type": "integer",
+									"format": "int64",
 									"description": "Числове значення бітової маски індикаторів ЮО учасника"
 								},
 								"indicators_str": {
@@ -1937,11 +1940,13 @@
 								"part_suma": {
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/part_suma",
 									"type": "number",
+									"format": "float",
 									"description": "Сума частки уставного капіталу"
 								},
 								"percent": {
 									"$id": "#items/anyOf/0/properties/founders/items/anyOf/0/properties/percent",
 									"type": "number",
+									"format": "float",
 									"description": "Відсоток частки уставного капіталу"
 								},
 								"n_pep": {
@@ -2090,7 +2095,8 @@
 								},
 								"indicators": {
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/indicators",
-									"type": "number",
+									"type": "integer",
+									"format": "int64",
 									"description": "Числове значення бітової маски індикаторів ЮО КБВ"
 								},
 								"indicators_str": {
@@ -2128,11 +2134,13 @@
 								"interest": {
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/interest",
 									"type": "number",
+									"format": "float",
 									"description": "Відсоток частки статутного капіталу або відсоток права голосу"
 								},
 								"indirect_interest": {
 									"$id": "#items/anyOf/0/properties/benefiaciars/items/anyOf/0/properties/indirect_interest",
 									"type": "number",
+									"format": "float",
 									"description": "Відсоток частки статутного капіталу або відсоток права голосу (непрямий вплив)"
 								},
 								"reason": {
@@ -2405,6 +2413,62 @@
 							}
 						}
 					},
+					"structure": {
+						"$id": "#items/anyOf/0/properties/structure",
+						"type": "array",
+						"title": "Масив інформації про структуру",
+						"description": "Перелік об'єктів щодо структури",
+						"items": {
+							"$id": "#items/anyOf/0/properties/structure/items/anyOf/0",
+							"type": "object",
+							"properties": {
+								"num_struct": {
+									"$id": "#items/anyOf/0/properties/structure/items/anyOf/0/properties/num_struct",
+									"type": "string",
+									"title": "Номер структури власності",
+									"description": "Номер структури власності"
+								},
+								"date_struct": {
+									"$id": "#items/anyOf/0/properties/structure/items/anyOf/0/properties/date_struct",
+									"type": "string",
+									"title": "Дата структури власності",
+									"description": "Дата структури власності"
+								},
+								"struct_signed": {
+									"$id": "#items/anyOf/0/properties/structure/items/anyOf/0/properties/struct_signed",
+									"type": "boolean",
+									"title": "Відмітка, що структуру власності підписано",
+									"description": "Відмітка, що структуру власності підписано"
+								},
+								"name_sign": {
+									"$id": "#items/anyOf/0/properties/structure/items/anyOf/0/properties/name_sign",
+									"type": "string",
+									"title": "ПІБ особи ким підписано структуру власності",
+									"description": "ПІБ особи ким підписано структуру власності"
+								},
+								"type_sign": {
+									"$id": "#items/anyOf/0/properties/structure/items/anyOf/0/properties/type_sign",
+									"type": "string",
+									"title": "Тип особи ким підписано структуру власності",
+									"description": "Тип особи ким підписано структуру власності 1 – Керівник, 2 – Представник, 3 – Засновник (учасник), 4 – Інша уповноважена особа,5 – Керівник іноземної ЮО"
+								},
+								"struct_false": {
+									"$id": "#items/anyOf/0/properties/structure/items/anyOf/0/properties/struct_false",
+									"type": "boolean",
+									"title": "Ознака, що можлива недостовірність структури власності",
+									"description": "Ознака, що можлива недостовірність структури власності"
+								},
+								"struct_opaque": {
+									"$id": "#items/anyOf/0/properties/structure/items/anyOf/0/properties/struct_opaque",
+									"type": "boolean",
+									"title": "Ознака, що структура власності визнана Національним банком України непрозорою",
+									"description": "Ознака, що структура власності визнана Національним банком України непрозорою"
+								}								
+							}
+						}
+					},
+
+					
 					"eps": {
 						"$id": "#items/anyOf/0/properties/eps",
 						"type": "array",
@@ -2706,7 +2770,8 @@
 								},
 								"indicators": {
 									"$id": "#items/anyOf/0/properties/branches/items/anyOf/0/properties/indicators",
-									"type": "number",
+									"type": "integer",
+									"format": "int64",
 									"description": "Числове значення бітової маски індикаторів материнської ЮО"
 								},
 								"indicators_str": {
