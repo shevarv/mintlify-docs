@@ -1316,6 +1316,49 @@
 						"description": "Перелік санкційних списків у числовому форматі, де присутні вилучені/втрачені застереження щодо особи (див. Розділ 'Довідники' таблицю Списки санкцій та застережень)"
 					},
 
+					"p_related_persons": {
+						"$id": "#items/anyOf/0/properties/p_related_persons",
+						"type": "array",
+						"title": "Масив пов'язаних осіб",
+						"description": "Перелік пов'язаних осіб",
+						"items": {
+							"$id": "#items/anyOf/0/properties/p_related_persons/items/anyOf/0",
+							"type": "object",
+							"properties": {
+								"name": {
+									"$id": "#items/anyOf/0/properties/p_related_persons/items/anyOf/0/properties/name",
+									"type": "string",
+									"title": "Назва (ПІБ) особи",
+									"description": "Назва (ПІБ) особи"
+								},
+								"code": {
+									"$id": "#items/anyOf/0/properties/p_related_persons/items/anyOf/0/properties/code",
+									"type": "string",
+									"title": "Код особи",
+									"description": "Код особи"
+								},
+								"birthdate": {
+									"$id": "#items/anyOf/0/properties/p_related_persons/items/anyOf/0/properties/birthdate",
+									"type": "string",
+									"title": "Дата народження",
+									"description": "Дата народження"
+								},
+								"relation": {
+									"$id": "#items/anyOf/0/properties/p_related_persons/items/anyOf/0/properties/relation",
+									"type": "string",
+									"title": "Типи зв'язків",
+									"description": "Типи зв'язків у тестовому форматі"
+								},
+								"relationtype": {
+									"$id": "#items/anyOf/0/properties/p_related_persons/items/anyOf/0/properties/relationtype",
+									"type": "number",
+									"title": "Типи зв'язків",
+									"description": "Тип зв'язків представлений бітовою маскою в десятковій системі. 0 біт - КБВ, 1 біт - учасник, 2 біт - керівник, 3 біт - представник "
+								}
+							}
+						}
+					},
+					
 
 					"sanction": {
 						"$id": "#items/anyOf/0/properties/sanction",
