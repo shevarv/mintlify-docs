@@ -916,7 +916,13 @@
 									"type": "string",
 									"description": "Дата народження особи"
 								},
-								"relatebrief": {
+								"relatecategory": {
+									"$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relatecategory",
+									"type": "string",
+									"title": "Категорія пов'язаної особи",
+									"description": "Категорія пов'язаної особи"
+								},
+                "relatebrief": {
 									"$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relatebrief",
 									"type": "string",
 									"title": "Тип пов'язання",
