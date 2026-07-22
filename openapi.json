@@ -557,6 +557,12 @@
 						"title": "ПІБ (назва) публічної особи (близької, пов'язаної)",
 						"description": "ПІБ (назва) публічної особи (близької, пов'язаної)"
 					},
+					"shortname": {
+						"$id": "#items/anyOf/0/properties/shortname",
+						"type": "string",
+						"title": "Коротка назва ЮО",
+						"description": "Коротка назва ЮО"
+					},
 					"aka": {
 						"$id": "#items/anyOf/0/properties/aka",
 						"type": "string",
