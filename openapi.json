@@ -561,7 +561,7 @@
 						"$id": "#items/anyOf/0/properties/shortname",
 						"type": "string",
 						"title": "Коротка назва ЮО",
-						"description": "Коротка назва ЮО"
+						"description": "🆕 Коротка назва ЮО"
 					},
 					"aka": {
 						"$id": "#items/anyOf/0/properties/aka",
@@ -866,6 +866,12 @@
 									"type": "string",
 									"title": "Найменування/ПІБ пов'язаної особи",
 									"description": "Найменування/ПІБ пов'язаної особи"
+								},
+								"relateshortname": {
+									"$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relateshortname",
+									"type": "string",
+									"title": "Коротке найменування пов'язаної особи",
+									"description": "🆕 Коротке найменування пов'язаної особи"
 								},
 								"relateaka": {
 									"$id": "#items/anyOf/0/properties/relatedPersons/items/anyOf/0/properties/relateaka",
